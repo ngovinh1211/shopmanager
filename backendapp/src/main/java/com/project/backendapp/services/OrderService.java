@@ -69,8 +69,9 @@ public class OrderService implements IOrderService{
     }
 
     @Override
-    public void deleteOrder(Long id) {
-        Order order = orderRepository.findById(id).orElse(null);
+    public void deleteOrder(Long id) throws DataNotFoundException {
+        Order order = orderRepository.findById(id)
+                .orElseThrow(() -> new DataNotFoundException("Cannot find user with id: "+id));
         // Soft delete, change active to false
         if(order != null) {
             order.setActive(false);

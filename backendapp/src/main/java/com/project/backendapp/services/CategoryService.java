@@ -1,6 +1,7 @@
 package com.project.backendapp.services;
 
 import com.project.backendapp.dtos.CategoryDTO;
+import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.models.Category;
 import com.project.backendapp.models.Product;
 import com.project.backendapp.repositories.CategoryRepository;
@@ -44,9 +45,12 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public void deleteCategory(long id) {
-        Optional<Category> optionalCategory = categoryRepository.findById(id);
-        optionalCategory.ifPresent(categoryRepository::delete);
+    public void deleteCategory(long id) throws DataNotFoundException {
+        Category category = categoryRepository.findById(id)
+                .orElseThrow(() -> new DataNotFoundException("Cannot find category with id: "+id));;
+        if(category != null) {
+            categoryRepository.delete(category);
+        }
     }
 }
 
