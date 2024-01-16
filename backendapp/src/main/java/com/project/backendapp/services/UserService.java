@@ -8,6 +8,7 @@ import com.project.backendapp.repositories.RoleRepository;
 import com.project.backendapp.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class UserService implements IUserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
-
+    private final PasswordEncoder passwordEncoder;
     @Override
     public User createUser(UserDTO userDTO) throws DataNotFoundException {
         // check phone number exists
@@ -41,10 +42,8 @@ public class UserService implements IUserService {
         // check if existing accountid then no need password
         if (userDTO.getFacebookAccountId() == 0 && userDTO.getGoogleAccountId() == 0) {
             String password = userDTO.getPassword();
-//
-//            //String encodedPassword = passwordEncoder.encode(password);
-//            //spring security
-//            //newUser.setPassword(encodedPassword);
+            String encodedPassword = passwordEncoder.encode(password);
+            newUser.setPassword(encodedPassword);
         }
         return userRepository.save(newUser);
     }
