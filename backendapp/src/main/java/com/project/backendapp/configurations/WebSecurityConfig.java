@@ -1,6 +1,6 @@
 package com.project.backendapp.configurations;
 
-//import com.project.backendapp.filters.JwtTokenFilter;
+import com.project.backendapp.filters.JwtTokenFilter;
 import com.project.backendapp.models.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
 import static org.springframework.http.HttpMethod.*;
 
 @Configuration
@@ -21,7 +22,7 @@ import static org.springframework.http.HttpMethod.*;
 @EnableWebMvc
 @RequiredArgsConstructor
 public class WebSecurityConfig {
-    //private final JwtTokenFilter jwtTokenFilter;
+    private final JwtTokenFilter jwtTokenFilter;
     @Value("${api.prefix}")
     private String apiPrefix;
     @Bean
@@ -95,4 +96,5 @@ public class WebSecurityConfig {
         return http.build();
     }
 }
+
 

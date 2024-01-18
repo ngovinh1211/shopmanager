@@ -5,6 +5,6 @@ import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.models.User;
 
 public interface IUserService {
-    User createUser(UserDTO userDTO) throws DataNotFoundException;
-    String login(String phoneNumber, String password);
+    User createUser(UserDTO userDTO) throws Exception;
+    String login(String phoneNumber, String password) throws Exception;
 }

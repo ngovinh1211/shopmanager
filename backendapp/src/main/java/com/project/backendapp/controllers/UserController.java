@@ -2,6 +2,7 @@ package com.project.backendapp.controllers;
 
 import com.project.backendapp.dtos.UserDTO;
 import com.project.backendapp.dtos.UserLoginDTO;
+import com.project.backendapp.models.User;
 import com.project.backendapp.services.IUserService;
 import com.project.backendapp.services.UserService;
 import jakarta.validation.Valid;
@@ -39,18 +40,21 @@ public class UserController {
             if(!userDTO.getPassword().equals(userDTO.getRetypePassword())){
                 return ResponseEntity.badRequest().body("Password does not match");
             }
-            userService.createUser(userDTO);
-            return ResponseEntity.ok("Register successfully");
+            User user = userService.createUser(userDTO);
+            return ResponseEntity.ok(user);
+            // return ResponseEntity.ok("Register successfully");
         }  catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
     @PostMapping("/login")
     public ResponseEntity<String> login(
-            @Valid @RequestBody UserLoginDTO userLoginDTO) {
-        //generate token
-        String token = userService.login(userLoginDTO.getPhoneNumber(), userLoginDTO.getPassword());
-        // Return token in response
-        return ResponseEntity.ok(token);
+            @Valid @RequestBody UserLoginDTO userLoginDTO)  {
+        try {
+            String token = userService.login(userLoginDTO.getPhoneNumber(), userLoginDTO.getPassword());
+            return ResponseEntity.ok(token);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
