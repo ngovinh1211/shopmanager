@@ -1,7 +1,6 @@
 package com.project.backendapp.components;
 
 import com.project.backendapp.exceptions.InvalidParamException;
-import com.project.backendapp.models.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -20,7 +19,7 @@ import java.util.function.Function;
 
 @Component
 @RequiredArgsConstructor
-public class JwtTokenUtil {
+public class JwtTokenUtils {
     @Value("${jwt.expiration}")
     private int expiration;         // Save to an environment variable
     @Value("${jwt.secretKey}")

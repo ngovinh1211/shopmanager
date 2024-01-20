@@ -1,6 +1,6 @@
 package com.project.backendapp.services;
 
-import com.project.backendapp.components.JwtTokenUtil;
+import com.project.backendapp.components.JwtTokenUtils;
 import com.project.backendapp.dtos.UserDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.exceptions.PermissionDenyException;
@@ -25,7 +25,7 @@ public class UserService implements IUserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtTokenUtil jwtTokenUtil;
+    private final JwtTokenUtils jwtTokenUtil;
     private final AuthenticationManager authenticationManager;
     @Override //Register
     public User createUser(UserDTO userDTO) throws Exception {

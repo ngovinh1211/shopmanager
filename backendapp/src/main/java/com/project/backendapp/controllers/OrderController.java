@@ -1,9 +1,11 @@
 package com.project.backendapp.controllers;
 
+import com.project.backendapp.components.LocalizationUtils;
 import com.project.backendapp.dtos.OrderDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.models.Order;
 import com.project.backendapp.services.IOrderService;
+import com.project.backendapp.utils.MessageKeys;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +20,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
     private final IOrderService orderService;
-
+    private  final LocalizationUtils localizationUtils;
     @PostMapping("")
     public ResponseEntity<?> createOrder(
             @Valid @RequestBody OrderDTO orderDTO,
@@ -80,7 +82,7 @@ public class OrderController {
     public ResponseEntity<String> deleteOrder(@Valid @PathVariable Long id) {
         try {
             orderService.deleteOrder(id);
-            return ResponseEntity.ok("Order deleted successfully.");
+            return ResponseEntity.ok(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_ORDER_SUCCESSFULLY));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
