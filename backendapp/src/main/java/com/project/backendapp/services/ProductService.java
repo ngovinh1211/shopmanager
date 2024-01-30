@@ -11,6 +11,7 @@ import com.project.backendapp.repositories.*;
 import com.project.backendapp.exceptions.*;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -44,6 +45,12 @@ public class ProductService implements IProductService {
         return productRepository.findById(productId).
                 orElseThrow(() -> new DataNotFoundException(
                         "Cannot find product with id =" + productId));
+    }
+
+
+    @Override
+    public List<Product> findProductsByIds(List<Long> productIds) {
+        return productRepository.findProductsByIds(productIds);
     }
 
     @Override

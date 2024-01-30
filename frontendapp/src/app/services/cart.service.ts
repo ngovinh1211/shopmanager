@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 export class CartService {
   private cart: Map<number, number> = new Map(); //using Map to store cart, id is key, value is quantity
   
-
+  
   constructor(private productService: ProductService) {
     //get detail from localStorage
      
