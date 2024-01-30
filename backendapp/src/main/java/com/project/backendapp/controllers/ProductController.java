@@ -119,7 +119,10 @@ public class ProductController {
                         .contentType(MediaType.IMAGE_JPEG)
                         .body(resource);
             } else {
-                return ResponseEntity.notFound().build();
+                return ResponseEntity.ok()
+                        .contentType(MediaType.IMAGE_JPEG)
+                        .body(new UrlResource(Paths.get("uploads/notfound.jpg").toUri()));
+//                return ResponseEntity.notFound().build();
             }
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
@@ -152,13 +155,16 @@ public class ProductController {
 
     @GetMapping("")     // http://localhost:8088/api/v1/products
     public ResponseEntity<ProductListResponse> getProducts(
-            @RequestParam("page")     int page,
-            @RequestParam("limit")    int limit
+            @RequestParam(defaultValue = "") String keyword,
+            @RequestParam(defaultValue = "0", name = "category_id") Long categoryId,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "9") int limit
     ) {
         PageRequest pageRequest = PageRequest.of(
                 page, limit,
-                Sort.by("createdAt").descending());
-        Page<ProductResponse> productPage = productService.getAllProducts(pageRequest);
+//                Sort.by("createdAt").descending());
+                Sort.by("id").ascending());
+        Page<ProductResponse> productPage = productService.getAllProducts(keyword, categoryId, pageRequest);
         // get number of all pages
         int totalPages = productPage.getTotalPages();
         List<ProductResponse> products = productPage.getContent();

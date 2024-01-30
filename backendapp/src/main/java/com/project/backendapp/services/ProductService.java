@@ -9,6 +9,7 @@ import com.project.backendapp.models.*;
 import com.project.backendapp.dtos.*;
 import com.project.backendapp.repositories.*;
 import com.project.backendapp.exceptions.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ public class ProductService implements IProductService {
     private final ProductImageRepository productImageRepository;
 
     @Override
+    @Transactional
     public Product createProduct(ProductDTO productDTO) throws DataNotFoundException {
         Category existingCategory = categoryRepository
                 .findById(productDTO.getCategoryId())
@@ -45,14 +47,17 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Page<ProductResponse> getAllProducts(PageRequest pageRequest) {
+    public Page<ProductResponse> getAllProducts(String keyword,
+                                                Long categoryId,
+                                                PageRequest pageRequest) {
         // get list of products by page and limit
-        return productRepository
-                .findAll(pageRequest)
-                .map(ProductResponse::fromProduct);
+        Page<Product> productsPage;
+        productsPage = productRepository.searchProducts(categoryId, keyword, pageRequest);
+        return productsPage.map(ProductResponse::fromProduct);
     }
 
     @Override
+    @Transactional
     public Product updateProduct(
             long id,
             ProductDTO productDTO
@@ -78,6 +83,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    @Transactional
     public void deleteProduct(long id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         optionalProduct.ifPresent(productRepository::delete);
@@ -89,6 +95,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    @Transactional
     public ProductImage createProductImage(
             Long productId,
             ProductImageDTO productImageDTO) throws Exception {

@@ -44,11 +44,15 @@ public class WebSecurityConfig {
                                     String.format("%s/users/login", apiPrefix)
                             )
                             .permitAll()
+
                             .requestMatchers(GET,
                                     String.format("%s/roles**", apiPrefix)).permitAll()
 
                             .requestMatchers(GET,
                                     String.format("%s/categories**", apiPrefix)).permitAll()
+
+                            .requestMatchers(GET,
+                                    String.format("%s/categories/**", apiPrefix)).permitAll()
 
                             .requestMatchers(POST,
                                     String.format("%s/categories/**", apiPrefix)).hasAnyRole(Role.ADMIN)
@@ -61,6 +65,7 @@ public class WebSecurityConfig {
 
                             .requestMatchers(GET,
                                     String.format("%s/products**", apiPrefix)).permitAll()
+
                             .requestMatchers(GET,
                                     String.format("%s/products/**", apiPrefix)).permitAll()
 
@@ -103,6 +108,7 @@ public class WebSecurityConfig {
 
 
                             .anyRequest().authenticated();
+                    //.anyRequest().permitAll();
 
                 })
                 .csrf(AbstractHttpConfigurer::disable);
@@ -119,6 +125,7 @@ public class WebSecurityConfig {
                 httpSecurityCorsConfigurer.configurationSource(source);
             }
         });
+
         return http.build();
     }
 }

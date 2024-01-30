@@ -15,6 +15,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -28,6 +29,7 @@ public class UserService implements IUserService {
     private final JwtTokenUtils jwtTokenUtil;
     private final AuthenticationManager authenticationManager;
     @Override //Register
+    @Transactional
     public User createUser(UserDTO userDTO) throws Exception {
         // check phone number exists
         String phoneNumber = userDTO.getPhoneNumber();

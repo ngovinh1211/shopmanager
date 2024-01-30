@@ -19,11 +19,11 @@ export class RegisterComponent {
   dateOfBirth: Date;
 
   constructor( private router: Router,private userService: UserService) {
-    this.phoneNumber = '999999';
-    this.password = '123456';
-    this.retypePassword = '123456';
-    this.fullName = 'user5';
-    this.address = 'hn';
+    this.phoneNumber = '';
+    this.password = '';
+    this.retypePassword = '';
+    this.fullName = '';
+    this.address = '';
     this.isAccepted = true;
     this.dateOfBirth = new Date();
     this.dateOfBirth.setFullYear(this.dateOfBirth.getFullYear() - 18);

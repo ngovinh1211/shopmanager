@@ -16,16 +16,16 @@ import { RoleService } from 'src/app/services/role.service';
 export class LoginComponent {
   @ViewChild('loginForm') loginForm!: NgForm;
 
-  phoneNumber: string = '33445566';
-  password: string = '123456';
+  phoneNumber: string = '';
+  password: string = '';
 
-  roles: Role[] = []; // Mảng roles
+  roles: Role[] = []; 
   rememberMe: boolean = true;
-  selectedRole: Role | undefined; // Biến để lưu giá trị được chọn từ dropdown
+  selectedRole: Role | undefined; // Save from dropdown
 
   onPhoneNumberChange() {
     console.log(`Phone typed: ${this.phoneNumber}`);
-    //how to validate ? phone must be at least 6 characters
+
   }
   constructor(
     private router: Router,
@@ -38,7 +38,7 @@ export class LoginComponent {
     
     debugger
     this.roleService.getRoles().subscribe({
-      next: (roles: Role[]) => { // Sử dụng kiểu Role[]
+      next: (roles: Role[]) => {
         debugger
         this.roles = roles;
         this.selectedRole = roles.length > 0 ? roles[0] : undefined;

@@ -7,6 +7,7 @@ import com.project.backendapp.models.Product;
 import com.project.backendapp.repositories.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,7 @@ import java.util.Optional;
 public class CategoryService implements ICategoryService {
     private final CategoryRepository categoryRepository;
     @Override
+    @Transactional
     public Category createCategory(CategoryDTO categoryDTO) {
         Category newCategory = Category
                 .builder()
@@ -36,6 +38,7 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
+    @Transactional
     public Category updateCategory(long categoryId,
                                    CategoryDTO categoryDTO) {
         Category existingCategory = getCategoryById(categoryId);
@@ -45,6 +48,7 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
+    @Transactional
     public void deleteCategory(long id) throws DataNotFoundException {
         Category category = categoryRepository.findById(id)
                 .orElseThrow(() -> new DataNotFoundException("Cannot find category with id: "+id));;
