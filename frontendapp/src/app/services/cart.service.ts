@@ -8,10 +8,12 @@ import { Observable, of } from 'rxjs';
 })
 
 export class CartService {
-  private cart: Map<number, number> = new Map(); // Dùng Map để lưu trữ giỏ hàng, key là id sản phẩm, value là số lượng
+  private cart: Map<number, number> = new Map(); //using Map to store cart, id is key, value is quantity
+  
 
   constructor(private productService: ProductService) {
-    // Lấy dữ liệu giỏ hàng từ localStorage khi khởi tạo service    
+    //get detail from localStorage
+     
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
       this.cart = new Map(JSON.parse(storedCart));      
@@ -21,27 +23,28 @@ export class CartService {
   addToCart(productId: number, quantity: number = 1): void {
     debugger
     if (this.cart.has(productId)) {
-      // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng lên `quantity`
+      // if product existed in cart, then increase quantity
+      
       this.cart.set(productId, this.cart.get(productId)! + quantity);
     } else {
-      // Nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm vào với số lượng là `quantity`
+      // if not exist, then add quantity
       this.cart.set(productId, quantity);
     }
-     // Sau khi thay đổi giỏ hàng, lưu trữ nó vào localStorage
+     // store to localStorage
     this.saveCartToLocalStorage();
   }
   
   getCart(): Map<number, number> {
     return this.cart;
   }
-  // Lưu trữ giỏ hàng vào localStorage
+  // store to localStorage
   private saveCartToLocalStorage(): void {
     debugger
     localStorage.setItem('cart', JSON.stringify(Array.from(this.cart.entries())));
   }  
-  // Hàm xóa dữ liệu giỏ hàng và cập nhật Local Storage
+  // delete cart and update localStorage
   clearCart(): void {
-    this.cart.clear(); // Xóa toàn bộ dữ liệu trong giỏ hàng
-    this.saveCartToLocalStorage(); // Lưu giỏ hàng mới vào Local Storage (trống)
+    this.cart.clear(); // delete entire cart
+    this.saveCartToLocalStorage(); // save new cart to localstorage
   }
 }
