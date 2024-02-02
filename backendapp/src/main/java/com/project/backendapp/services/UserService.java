@@ -1,6 +1,7 @@
 package com.project.backendapp.services;
 
 import com.project.backendapp.components.JwtTokenUtils;
+import com.project.backendapp.components.LocalizationUtils;
 import com.project.backendapp.dtos.UserDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.exceptions.PermissionDenyException;
@@ -8,6 +9,7 @@ import com.project.backendapp.models.Role;
 import com.project.backendapp.models.User;
 import com.project.backendapp.repositories.RoleRepository;
 import com.project.backendapp.repositories.UserRepository;
+import com.project.backendapp.utils.MessageKeys;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,6 +30,7 @@ public class UserService implements IUserService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenUtils jwtTokenUtil;
     private final AuthenticationManager authenticationManager;
+    private final LocalizationUtils localizationUtils;
     @Override //Register
     @Transactional
     public User createUser(UserDTO userDTO) throws Exception {
@@ -63,19 +66,29 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public String login(String phoneNumber, String password) throws Exception{
+    public String login(
+            String phoneNumber,
+            String password,
+            Long roleId
+    ) throws Exception {
         Optional<User> optionalUser = userRepository.findByPhoneNumber(phoneNumber);
         if(optionalUser.isEmpty()) {
-            throw new DataNotFoundException("Invalid phone number / password");
+            throw new DataNotFoundException(localizationUtils.getLocalizedMessage(MessageKeys.WRONG_PHONE_PASSWORD));
         }
-
         User existingUser = optionalUser.get();
         //check password
         if (existingUser.getFacebookAccountId() == 0
                 && existingUser.getGoogleAccountId() == 0) {
             if(!passwordEncoder.matches(password, existingUser.getPassword())) {
-                throw new BadCredentialsException("Wrong phone number or password");
+                throw new BadCredentialsException(localizationUtils.getLocalizedMessage(MessageKeys.WRONG_PHONE_PASSWORD));
             }
+        }
+        Optional<Role> optionalRole = roleRepository.findById(roleId);
+        if(optionalRole.isEmpty() || !roleId.equals(existingUser.getRole().getId())) {
+            throw new DataNotFoundException(localizationUtils.getLocalizedMessage(MessageKeys.ROLE_DOES_NOT_EXISTS));
+        }
+        if(!optionalUser.get().isActive()) {
+            throw new DataNotFoundException(localizationUtils.getLocalizedMessage(MessageKeys.USER_IS_LOCKED));
         }
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                 phoneNumber, password,

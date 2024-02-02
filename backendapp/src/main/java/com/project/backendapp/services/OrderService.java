@@ -1,11 +1,12 @@
 package com.project.backendapp.services;
 
+import com.project.backendapp.dtos.CartItemDTO;
 import com.project.backendapp.dtos.OrderDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
-import com.project.backendapp.models.Order;
-import com.project.backendapp.models.OrderStatus;
-import com.project.backendapp.models.User;
+import com.project.backendapp.models.*;
+import com.project.backendapp.repositories.OrderDetailRepository;
 import com.project.backendapp.repositories.OrderRepository;
+import com.project.backendapp.repositories.ProductRepository;
 import com.project.backendapp.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Service
@@ -20,6 +22,8 @@ import java.util.List;
 public class OrderService implements IOrderService{
     private final UserRepository userRepository;
     private final OrderRepository orderRepository;
+    private final ProductRepository productRepository;
+    private final OrderDetailRepository orderDetailRepository;
     private final ModelMapper modelMapper;
     @Override
     @Transactional
@@ -44,7 +48,32 @@ public class OrderService implements IOrderService{
         }
         order.setShippingDate(shippingDate);
         order.setActive(true);
+        order.setTotalMoney(orderDTO.getTotalMoney());
         orderRepository.save(order);
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        for (CartItemDTO cartItemDTO : orderDTO.getCartItems()) {
+            // create order detail object
+            OrderDetail orderDetail = new OrderDetail();
+            orderDetail.setOrder(order);
+
+            // get list product from cart
+            Long productId = cartItemDTO.getProductId();
+            int quantity = cartItemDTO.getQuantity();
+
+            // Find information of product from database
+            Product product = productRepository.findById(productId)
+                    .orElseThrow(() -> new DataNotFoundException("Product not found with id: " + productId));
+
+            // set info for order detail
+            orderDetail.setProduct(product);
+            orderDetail.setNumberOfProducts(quantity);
+            orderDetail.setPrice(product.getPrice());
+
+            // add order detail to list
+            orderDetails.add(orderDetail);
+        }
+        // save order details to database
+        orderDetailRepository.saveAll(orderDetails);
         return order;
     }
 

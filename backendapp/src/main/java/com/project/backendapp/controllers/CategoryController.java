@@ -50,6 +50,7 @@ public class CategoryController {
         }
         Category category = categoryService.createCategory(categoryDTO);
         categoryResponse.setCategory(category);
+        categoryResponse.setMessage(localizationUtils.getLocalizedMessage(MessageKeys.INSERT_CATEGORY_SUCCESSFULLY));
         return ResponseEntity.ok(categoryResponse);
     }
 
@@ -86,7 +87,7 @@ public class CategoryController {
             categoryService.deleteCategory(id);
             return ResponseEntity.ok(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_CATEGORY_SUCCESSFULLY));
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_CATEGORY_SUCCESSFULLY));
+            return ResponseEntity.badRequest().body(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_CATEGORY_FAILED));
         }
 
     }

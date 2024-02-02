@@ -9,9 +9,9 @@ public class MessageKeys {
 
     public static final String INSERT_CATEGORY_SUCCESSFULLY = "category.create_category.create_successfully";
     public static final String DELETE_CATEGORY_SUCCESSFULLY = "category.delete_category.delete_successfully";
-    public static final String DELETE_CATEGORY_FAILED = "category.delete_category.delete_failed";
     public static final String UPDATE_CATEGORY_SUCCESSFULLY = "category.update_category.update_successfully";
     public static final String UPDATE_CATEGORY_FAILED = "category.update_category.update_failed";
+    public static final String DELETE_CATEGORY_FAILED = "category.delete_category.delete_failed";
     public static final String DELETE_ORDER_SUCCESSFULLY = "order.delete_order.delete_successfully";
     public static final String DELETE_ORDER_DETAIL_SUCCESSFULLY = "order.delete_order_detail.delete_successfully";
     public static final String UPLOAD_IMAGES_MAX_5 = "product.upload_images.error_max_5_images";
@@ -20,4 +20,6 @@ public class MessageKeys {
     public static final String INSERT_CATEGORY_FAILED = "category.create_category.create_failed";
     public static final String WRONG_PHONE_PASSWORD = "user.login.wrong_phone_password";
     public static final String ROLE_DOES_NOT_EXISTS = "user.login.role_not_exist";
+
+
 }
