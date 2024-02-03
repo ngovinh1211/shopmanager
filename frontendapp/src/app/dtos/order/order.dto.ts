@@ -1,46 +1,36 @@
-import { 
-    IsString, 
-    IsNotEmpty, 
-    IsPhoneNumber, 
-    IsNumber 
+import { IsString, 
+  IsNotEmpty, 
+  IsPhoneNumber, 
+  IsNumber, ArrayMinSize, 
+  ValidateNested, 
+  Length 
 } from 'class-validator';
+import { Type } from 'class-transformer';
 import { CartItemDTO } from './cart.item.dto';
 
 export class OrderDTO {
-  @IsNumber()
   user_id: number;
 
-  @IsString()
-  @IsNotEmpty()
   fullname: string;
 
-  @IsString()
-  @IsNotEmpty()
   email: string;
 
-  @IsPhoneNumber()
   phone_number: string;
-
-  @IsString()
-  @IsNotEmpty()
+  
   address: string;
 
-  @IsString()
+  
   note: string;
-
-  @IsNumber()
+  
   total_money: number;
 
-  @IsString()
   shipping_method: string;
 
-  @IsString()
   payment_method: string;
 
-  @IsString()
   coupon_code: string;
 
-  cart_items: CartItemDTO[]; 
+  cart_items: { product_id: number, quantity: number }[];
 
   constructor(data: any) {
     this.user_id = data.user_id;
@@ -56,3 +46,4 @@ export class OrderDTO {
     this.cart_items = data.cart_items;
   }
 }
+

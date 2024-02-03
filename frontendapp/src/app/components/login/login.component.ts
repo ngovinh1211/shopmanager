@@ -16,8 +16,8 @@ import { RoleService } from 'src/app/services/role.service';
 export class LoginComponent {
   @ViewChild('loginForm') loginForm!: NgForm;
 
-  phoneNumber: string = '';
-  password: string = '';
+  phoneNumber: string = '0123456';
+  password: string = '123456';
 
   roles: Role[] = []; 
   rememberMe: boolean = true;
