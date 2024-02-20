@@ -38,7 +38,7 @@ public class OrderService implements IOrderService{
         Order order = new Order();
         modelMapper.map(orderDTO, order);
         order.setUser(user);
-        order.setOrderDate(new Date());
+        order.setOrderDate(LocalDate.now());
         order.setStatus(OrderStatus.PENDING);
         // Check shipping date > today
         LocalDate shippingDate = orderDTO.getShippingDate() == null

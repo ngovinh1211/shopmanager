@@ -5,6 +5,7 @@ import com.project.backendapp.dtos.UserLoginDTO;
 import com.project.backendapp.models.User;
 import com.project.backendapp.responses.LoginResponse;
 import com.project.backendapp.responses.RegisterResponse;
+import com.project.backendapp.responses.UserResponse;
 import com.project.backendapp.services.IUserService;
 import com.project.backendapp.components.LocalizationUtils;
 import com.project.backendapp.utils.MessageKeys;
@@ -13,10 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -78,6 +76,16 @@ public class UserController {
                     LoginResponse.builder()
                         .message(localizationUtils.getLocalizedMessage(MessageKeys.LOGIN_FAILED,e.getMessage()))
                         .build());
+        }
+    }
+    @PostMapping("/details")
+    public ResponseEntity<UserResponse> getUserDetails(@RequestHeader("Authorization") String token) {
+        try {
+            String extractedToken = token.substring(7); // delete Bearer from token
+            User user = userService.getUserDetailsFromToken(extractedToken);
+            return ResponseEntity.ok(UserResponse.fromUser(user));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
         }
     }
 }

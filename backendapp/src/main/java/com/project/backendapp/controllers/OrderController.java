@@ -4,6 +4,7 @@ import com.project.backendapp.components.LocalizationUtils;
 import com.project.backendapp.dtos.OrderDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.models.Order;
+import com.project.backendapp.responses.OrderResponse;
 import com.project.backendapp.services.IOrderService;
 import com.project.backendapp.utils.MessageKeys;
 import jakarta.validation.Valid;
@@ -57,7 +58,8 @@ public class OrderController {
     public ResponseEntity<?> getOrder(@Valid @PathVariable("id") Long orderId) {
         try {
             Order existingOrder = orderService.getOrder(orderId);
-            return ResponseEntity.ok(existingOrder);
+            OrderResponse orderResponse = OrderResponse.fromOrder(existingOrder);
+            return ResponseEntity.ok(orderResponse);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
