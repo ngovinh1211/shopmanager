@@ -23,17 +23,17 @@ export class DetailProductComponent implements OnInit {
     private productService: ProductService,
     private cartService: CartService,
     // private categoryService: CategoryService,
-    // private router: Router,
-    // private activatedRoute: ActivatedRoute,
+     private router: Router,
+     private activatedRoute: ActivatedRoute,
     ) {
       
     }
     ngOnInit() {
       // get productId from URL      
-      //const idParam = this.activatedRoute.snapshot.paramMap.get('id');
+      const idParam = this.activatedRoute.snapshot.paramMap.get('id');
       debugger
       //this.cartService.clearCart();
-      const idParam = 1//fake 
+      // const idParam = 1//fake 
       if (idParam !== null) {
         this.productId = +idParam;
       }
@@ -94,9 +94,10 @@ export class DetailProductComponent implements OnInit {
       debugger
       if (this.product) {
         this.cartService.addToCart(this.product.id, this.quantity);
+        alert('Added to cart.')
       } else {
         // Check when product is null
-        console.error('Không thể thêm sản phẩm vào giỏ hàng vì product là null.');
+        console.error('Cannot add product to cart because product is null.');
       }
     }    
         
@@ -112,5 +113,12 @@ export class DetailProductComponent implements OnInit {
     
     buyNow(): void {
       // When user want to buy now 
+      if (this.product) {
+        this.cartService.addToCart(this.product.id, this.quantity);
+      } else {
+        // Check when product is null
+        console.error('Cannot add product to cart because product is null.');
+      }
+      this.router.navigate(['/orders']);
     }    
 }

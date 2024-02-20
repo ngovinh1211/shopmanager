@@ -5,8 +5,10 @@ import { ProductService } from '../../services/product.service';
 import { OrderService } from '../../services/order.service';
 import { environment } from 'src/app/environments/environment';
 import { OrderDTO } from '../../dtos/order/order.dto';
-
+import { Order } from 'src/app/models/order';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TokenService } from 'src/app/services/token.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -36,13 +38,16 @@ export class OrderComponent {
     private cartService: CartService,
     private productService: ProductService,
     private orderService: OrderService,
-    private fb: FormBuilder
+    private tokenService: TokenService,
+    private formBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
-    this.orderForm = this.fb.group({
+    this.orderForm = this.formBuilder.group({
       fullname: ['vinh', Validators.required], //full name is formControl required      
       email: ['vinh123@gmail.com', [Validators.email]], // using Validators.email 
       phone_number: ['99955595', [Validators.required, Validators.minLength(6)]], // phone_number required and at least 6 characters
-      address: ['nhà x ngõ y', [Validators.required, Validators.minLength(5)]], // address required and at least 5 characters
+      address: ['400 Xa Dan', [Validators.required, Validators.minLength(5)]], // address required and at least 5 characters
       note: ['high price '],
       shipping_method: ['express'],
       payment_method: ['cod']
@@ -51,6 +56,8 @@ export class OrderComponent {
 
 
   ngOnInit(): void {
+    debugger
+    this.orderData.user_id = this.tokenService.getUserId();    
     // get list product from cart
     debugger
     const cart = this.cartService.getCart();
@@ -58,6 +65,9 @@ export class OrderComponent {
 
     // call service to get list product from ID
     debugger
+    if(productIds.length === 0) {
+      return;
+    } 
     this.productService.getProductsByIds(productIds).subscribe({
       next: (products) => {
         debugger
@@ -72,7 +82,7 @@ export class OrderComponent {
             quantity: cart.get(productId)!
           };
         });
-        console.log('abc123');
+        console.log('get product test');
       },
       complete: () => {
         debugger;
@@ -87,7 +97,6 @@ export class OrderComponent {
   placeOrder() {
     debugger
     if (this.orderForm.valid) {
-      // Gán giá trị từ form vào đối tượng orderData
       /*
       this.orderData.fullname = this.orderForm.get('fullname')!.value;
       this.orderData.email = this.orderForm.get('email')!.value;
@@ -97,7 +106,7 @@ export class OrderComponent {
       this.orderData.shipping_method = this.orderForm.get('shipping_method')!.value;
       this.orderData.payment_method = this.orderForm.get('payment_method')!.value;
       */
-      // Sử dụng toán tử spread (...) để sao chép giá trị từ form vào orderData
+      // using spread (...) operator
       this.orderData = {
         ...this.orderData,
         ...this.orderForm.value
@@ -106,11 +115,14 @@ export class OrderComponent {
         product_id: cartItem.product.id,
         quantity: cartItem.quantity
       }));
+      this.orderData.total_money =  this.totalAmount;
       // Infomation validated
       this.orderService.placeOrder(this.orderData).subscribe({
-        next: (response) => {
-          debugger;
-          console.log('Order successfully ~!');
+        next: (response:Order) => {
+          debugger;          
+          alert('Order successfully ~~~!');
+          this.cartService.clearCart();
+          this.router.navigate(['/']);
         },
         complete: () => {
           debugger;
@@ -119,6 +131,7 @@ export class OrderComponent {
         error: (error: any) => {
           debugger;
           console.error('Order error:', error);
+          alert(`Order error: ${error}`);
         },
       });
     } else {

@@ -6,14 +6,14 @@
     </div>
     <!-- 1 search box on left, 1 combobox on right  -->
     <div class="search-box">
-        <input type="text" class="form-control search-input" placeholder="Tìm sản phẩm" [(ngModel)]="keyword">
+        <input type="text" class="form-control search-input" placeholder="Search product..." [(ngModel)]="keyword">
         <select class="form-control product-category" [(ngModel)]="selectedCategoryId">
-            <option [value]="0">Tất cả</option>
+            <option [value]="0">All categories</option>
             <option *ngFor="let category of categories" [value]="category.id">
                 {{ category.name }}
             </option>
         </select>
-        <button class="btn btn-primary ml-2" (click)="searchProducts()">Tìm kiếm</button>
+        <button class="btn btn-primary ml-2" (click)="searchProducts()">Search</button>
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-6" *ngFor="let product of products">
@@ -21,7 +21,7 @@
                 <img [src]="product.url" alt="Product Image" class="product-image">
                 <h3 class="product-name">{{ product.name }}</h3>
                 <p class="product-description">{{ product.description }}</p>
-                <p class="product-price">Giá: ${{ product.price }}</p>
+                <p class="product-price">Price: ${{ product.price }}</p>
             </div>
         </div>
     </div>

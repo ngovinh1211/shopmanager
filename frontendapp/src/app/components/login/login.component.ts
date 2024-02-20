@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { LoginDTO } from '../../dtos/user/login.dto';
-import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { TokenService } from '../../services/token.service';
+import { RoleService } from '../../services/role.service'; 
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { LoginResponse } from '../../responses/user/login.response';
-import { TokenService } from 'src/app/services/token.service';
-import { Role } from 'src/app/models/role';
-import { RoleService } from 'src/app/services/role.service';
+import { Role } from '../../models/role'; 
+import { UserResponse } from '../../responses/user/user.response';
 
 @Component({
   selector: 'app-login',
@@ -22,13 +23,15 @@ export class LoginComponent {
   roles: Role[] = []; 
   rememberMe: boolean = true;
   selectedRole: Role | undefined; // Save from dropdown
-
+  userResponse?: UserResponse
+  
   onPhoneNumberChange() {
     console.log(`Phone typed: ${this.phoneNumber}`);
 
   }
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private userService: UserService,
     private tokenService: TokenService,
     private roleService: RoleService
@@ -43,13 +46,20 @@ export class LoginComponent {
         this.roles = roles;
         this.selectedRole = roles.length > 0 ? roles[0] : undefined;
       },
+      complete: () => {
+        debugger
+      },
       error: (error: any) => {
         debugger
         console.error('Error getting roles:', error);
       }
     });
   }
-
+  createAccount() {
+    debugger
+    //navigate user to register
+    this.router.navigate(['/register']); 
+  }
   login() {
     const message = `phone: ${this.phoneNumber}` +
       `password: ${this.password}`;
@@ -65,10 +75,28 @@ export class LoginComponent {
       next: (response: LoginResponse) => {
         debugger;
         const { token } = response;
-        if (this.rememberMe) {
+        if (this.rememberMe) {          
           this.tokenService.setToken(token);
-        }                
-        //this.router.navigate(['/login']);
+          debugger;
+          this.userService.getUserDetail(token).subscribe({
+            next: (response: any) => {
+              debugger
+              this.userResponse = {
+                ...response,
+                date_of_birth: new Date(response.date_of_birth),
+              };    
+              this.userService.saveUserResponseToLocalStorage(this.userResponse); 
+              this.router.navigate(['/']);                      
+            },
+            complete: () => {
+              debugger;
+            },
+            error: (error: any) => {
+              debugger;
+              alert(error.error.message);
+            }
+          })
+        }                        
       },
       complete: () => {
         debugger;
