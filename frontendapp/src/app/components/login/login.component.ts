@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild,OnInit  } from '@angular/core';
 import { LoginDTO } from '../../dtos/user/login.dto';
 import { UserService } from '../../services/user.service';
 import { TokenService } from '../../services/token.service';
@@ -14,7 +14,7 @@ import { UserResponse } from '../../responses/user/user.response';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   @ViewChild('loginForm') loginForm!: NgForm;
 
   phoneNumber: string = '0123456';
@@ -24,7 +24,7 @@ export class LoginComponent {
   rememberMe: boolean = true;
   selectedRole: Role | undefined; // Save from dropdown
   userResponse?: UserResponse
-  
+
   onPhoneNumberChange() {
     console.log(`Phone typed: ${this.phoneNumber}`);
 
@@ -85,7 +85,8 @@ export class LoginComponent {
                 ...response,
                 date_of_birth: new Date(response.date_of_birth),
               };    
-              this.userService.saveUserResponseToLocalStorage(this.userResponse); 
+              this.userService.saveUserResponseToLocalStorage(this.userResponse);
+              alert(`Login successful ~~!`);
               this.router.navigate(['/']);                      
             },
             complete: () => {

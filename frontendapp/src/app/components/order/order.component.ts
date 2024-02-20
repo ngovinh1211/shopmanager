@@ -21,7 +21,7 @@ export class OrderComponent {
   couponCode: string = ''; // coupon
   totalAmount: number = 0; // total amount
   orderData: OrderDTO = {
-    user_id: 3,
+    user_id: 0,
     fullname: '', // get from form
     email: '', //get from form
     phone_number: '', // get from form
@@ -130,7 +130,6 @@ export class OrderComponent {
         },
         error: (error: any) => {
           debugger;
-          console.error('Order error:', error);
           alert(`Order error: ${error}`);
         },
       });
