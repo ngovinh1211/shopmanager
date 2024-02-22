@@ -47,7 +47,8 @@ export class UserProfileComponent implements OnInit {
           address: this.userResponse?.address ?? '',
           date_of_birth: this.userResponse?.date_of_birth.toISOString().substring(0, 10),
         });        
-        this.userService.saveUserResponseToLocalStorage(this.userResponse);         
+        this.userService.saveUserResponseToLocalStorage(this.userResponse);   
+            
       },
       complete: () => {
         debugger;
@@ -85,6 +86,7 @@ export class UserProfileComponent implements OnInit {
           next: (response: any) => {
             this.userService.removeUserFromLocalStorage();
             this.tokenService.removeToken();
+            alert('Information saved ~! Please log in again !')  
             this.router.navigate(['/login']);
           },
           error: (error: any) => {

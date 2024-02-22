@@ -40,7 +40,7 @@ export class OrderDetailComponent implements OnInit {
 
   getOrderDetails(): void {
     debugger
-    const orderId = 7; // fake ID.
+    const orderId = 10; // fake ID.
     this.orderService.getOrderById(orderId).subscribe({
       next: (response: any) => {        
         debugger;       

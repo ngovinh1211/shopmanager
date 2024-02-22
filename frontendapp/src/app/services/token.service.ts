@@ -9,15 +9,24 @@ export class TokenService {
     private jwtHelperService = new JwtHelperService();
     constructor(){}
     //getter/setter
-    getToken():string  {
-        return localStorage.getItem(this.TOKEN_KEY)?? '';
+    getToken():string {
+        return localStorage.getItem(this.TOKEN_KEY) ?? '';
     }
     setToken(token: string): void {        
         localStorage.setItem(this.TOKEN_KEY, token);             
     }
     getUserId(): number {
         let userObject = this.jwtHelperService.decodeToken(this.getToken() ?? '');
-        return 'userId' in userObject ? parseInt(userObject['userId']) : 0;
+        // Check if userObject is null
+        if (userObject === null) {
+            return 0;
+        }
+        // Check if 'userId' property exists
+        if ('userId' in userObject) {
+            return parseInt(userObject['userId']);
+        } else {
+            return 0;
+        }
     }
       
     removeToken(): void {

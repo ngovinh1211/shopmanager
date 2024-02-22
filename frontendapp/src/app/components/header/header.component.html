@@ -19,8 +19,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" [ngClass]="{ 'active': activeNavItem === 1 }" (click)="setActiveNavItem(1)"
-              routerLink="/"><i class="fa-solid fa-bell"></i>
-              Notification
+              routerLink="/"><i class="fa-solid fa-store"></i>
+              All Products
             </a>
           </li>
           <li class="nav-item">
@@ -31,20 +31,26 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" [ngClass]="{ 'active': activeNavItem === 3 }" (click)="setActiveNavItem(3)"
+              routerLink="/contact"><i class="fa-solid fa-location-dot"></i>
+              Contact Us
+            </a>
+          </li>
+          <li class="nav-item">
             <ng-container *ngIf="userResponse">
               <ng-container ngbPopover="My Account,My Order,Logout" popoverTitle="User Actions" triggers="click"
                 [placement]="'bottom'">
-                <a class="nav-link" routerLink="/profile" [ngbPopover]="popoverContent"
+                <a class="nav-link" [ngbPopover]="popoverContent"
                   (click)="togglePopover($event)"><i class="fa-solid fa-user"></i>
                   {{ userResponse.fullname }}
                 </a>
                 <ng-template #popoverContent>
                   <div class="popover-list">
-                    <a href="#" class="popover-item" (click)="handleItemClick(0)"><i class="fa-regular fa-user"></i> My
+                    <a class="popover-item" (click)="handleItemClick(0)"><i class="fa-regular fa-user"></i> My
                       Account</a>
-                    <a href="#" class="popover-item" (click)="handleItemClick(1)"><i class="fa-solid fa-clipboard"></i>
+                    <a class="popover-item" (click)="handleItemClick(1)"><i class="fa-solid fa-clipboard"></i>
                       My Order</a>
-                    <a href="#" class="popover-item" (click)="handleItemClick(2)"><i
+                    <a class="popover-item" (click)="handleItemClick(2)"><i
                         class="fa-solid fa-right-from-bracket"></i> Logout</a>
                   </div>
                 </ng-template>
