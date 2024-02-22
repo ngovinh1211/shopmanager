@@ -7,14 +7,14 @@
     <form [formGroup]="orderForm"> <!-- Thêm form và gán formGroup -->
         <div class="row">
             <div class="col-md-6">
-                <h2 class="product-header">Thông tin người nhận</h2>
+                <h2 class="product-header">Receiver Information</h2>
                 <div class="mb-3">
-                    <label for="fullname" class="form-label">Họ và tên</label>
+                    <label for="fullname" class="form-label">Full Name</label>
                     <input type="text" formControlName="fullname" class="form-control" id="fullname"
                         [class.is-invalid]="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched">
                     <div *ngIf="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched"
                         class="invalid-feedback">
-                        Họ và tên là trường bắt buộc.
+                        Full name is required.
                     </div>
                 </div>
                 <div class="mb-3">
@@ -23,61 +23,61 @@
                         [class.is-invalid]="orderForm.get('email')!.invalid && orderForm.get('email')!.touched">
                     <div *ngIf="orderForm.get('email')!.invalid && orderForm.get('email')!.touched"
                         class="invalid-feedback">
-                        {{ orderForm.get('email')!.hasError('email') ? 'Email không hợp lệ' : 'Email là trường bắt buộc'
+                        {{ orderForm.get('email')!.hasError('email') ? 'Email is invalid' : 'Email is required'
                         }}
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Số điện thoại</label>
-                    <input type="text" class="form-control" formControlName="phone_number" placeholder="Số điện thoại"
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" formControlName="phone_number" placeholder="Phone Number"
                         required id="phone"
                         [class.is-invalid]="orderForm.get('phone_number')!.invalid && orderForm.get('phone_number')!.touched">
                     <div *ngIf="orderForm.get('phone_number')!.invalid && orderForm.get('phone_number')!.touched"
                         class="invalid-feedback">
-                        Số điện thoại là trường bắt buộc và ít nhất 6 ký tự.
+                        Phone number is required and must have at least 6 characters.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="address" class="form-label">Địa chỉ</label>
-                    <input type="text" class="form-control" formControlName="address" placeholder="Địa chỉ" required
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" formControlName="address" placeholder="Address" required
                         id="address"
                         [class.is-invalid]="orderForm.get('address')!.invalid && orderForm.get('address')!.touched">
                     <div *ngIf="orderForm.get('address')!.invalid && orderForm.get('address')!.touched"
                         class="invalid-feedback">
-                        Địa chỉ là trường bắt buộc và ít nhất 5 ký tự.
+                        Address is required and must have at least 5 characters.
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="note" class="form-label">Ghi chú</label>
-                    <input type="text" class="form-control" formControlName="note" placeholder="Ghi chú" required
+                    <label for="note" class="form-label">Note</label>
+                    <input type="text" class="form-control" formControlName="note" placeholder="Note" required
                         id="note">
                 </div>
                 <div class="mb-3">
-                    <label for="shippingMethod">Phương thức vận chuyển</label>
+                    <label for="shippingMethod">Shipping Method</label>
                     <select class="form-control" id="shippingMethod" formControlName="shipping_method">
-                        <option value="express">Nhanh (Express)</option>
-                        <option value="normal">Thường (Normal)</option>
+                        <option value="express">Fast (Express)</option>
+                        <option value="normal">Slow (Normal)</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="paymentMethod">Phương thức thanh toán</label>
+                    <label for="paymentMethod">Payment Method</label>
                     <select class="form-control" id="paymentMethod" formControlName="payment_method">
-                        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
-                        <option value="other">Thanh toán khác</option>
+                        <option value="cod">Cash on delivery (COD)</option>
+                        <option value="other">Other payment</option>
                     </select>
                 </div>
                 <!-- </form> -->
             </div>
             <div class="col-md-6">
-                <h2 class="product-order">Sản phẩm đã đặt hàng</h2>
+                <h2 class="product-order">Products in cart</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th scope="col" class="text-start">Sản phẩm</th>
-                            <th scope="col">Số lượng</th>
-                            <th scope="col">Đơn giá</th>
-                            <th scope="col">Tổng giá</th>
+                            <th scope="col" class="text-start">Product</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -98,17 +98,17 @@
                     </tbody>
                 </table>
                 <div class="text-start mt-3">
-                    <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | currency:'$':'symbol':'1.0-0'}}</h4>
+                    <h4 class="header-text text-end ">Total price: {{ totalAmount | currency:'$':'symbol':'1.0-0'}}</h4>
                 </div>
                 <div class="mt-3">
-                    <h4 class="product-header">Nhập coupon</h4>
+                    <h4 class="product-header">Discount coupon</h4>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nhập coupon">
-                        <button class="btn btn-gradient" type="button">Áp dụng</button>
+                        <input type="text" class="form-control" placeholder="Type your discount code...">
+                        <button class="btn btn-gradient" type="button">Apply</button>
                     </div>
                 </div>
                 <div class="text-start mt-3">
-                    <button (click)="placeOrder()" class="btn btn-gradient" type="button">Đặt hàng</button>
+                    <button (click)="placeOrder()" class="btn btn-gradient" type="button">Confirm Order</button>
                 </div>
             </div>
         </div>

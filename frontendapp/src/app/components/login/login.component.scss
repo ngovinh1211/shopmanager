@@ -64,15 +64,18 @@
     color: rgb(105, 244, 181);
     text-decoration: none;
 }
+.register-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 .access-right {
     margin-top: 20px;
     width: 200px;
-    color: white;
-    border: 1px solid rgb(225, 64, 180);
+    border: 1px solid #00FFFF;
 }
 
 .access-right:focus {
-    border: 1px solid rgb(225, 64, 180);
+    border: 1px solid #00FFFF;
 }
 
 .form-control::placeholder {

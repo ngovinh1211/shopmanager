@@ -12,6 +12,7 @@ import { TokenService } from 'src/app/services/token.service';
 export class HeaderComponent implements OnInit{
   userResponse?:UserResponse | null;
   isPopoverOpen = false;
+  activeNavItem: number = 0;
 
   togglePopover(event: Event): void {
     event.preventDefault();
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit{
     if(index === 2) {
       this.userService.removeUserFromLocalStorage();
       this.tokenService.removeToken();
-      this.userResponse = this.userService.getUserResponseFromLocalStorage();    
+      this.userResponse = this.userService.getUserResponseFromLocalStorage();
+      alert("Logout successful ~!")    
     }
     this.isPopoverOpen = false; // Close the popover after clicking an item    
   }
@@ -38,4 +40,8 @@ export class HeaderComponent implements OnInit{
   ngOnInit() {
     this.userResponse = this.userService.getUserResponseFromLocalStorage();    
   }  
+  setActiveNavItem(index: number) {    
+    this.activeNavItem = index;
+    alert(this.activeNavItem);
+  } 
 }

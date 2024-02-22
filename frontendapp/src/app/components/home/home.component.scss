@@ -1,3 +1,4 @@
+@import '../../styles/shared-styles.scss';
 .intro-section {
     text-align: center;
     color: white;
@@ -13,6 +14,8 @@
 
 .product-category {
     width: 200px;
+    background-color: transparent;
+    color: white;
 }
 
 .search-input {
@@ -20,9 +23,8 @@
     background-color: rgb(2, 0, 36);
     margin-right: 10px;
     border-color: cyan;
-    color: white;
+    color: $white-color;
 }
-
 .form-control {
     background-color: transparent;
     color: white;
