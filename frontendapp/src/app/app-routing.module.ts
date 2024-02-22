@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import {
-  DetailProductComponent
+import { 
+  DetailProductComponent 
 } from './components/detail-product/detail-product.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderDetailComponent } from './components/detail-order/order.detail.component';
-import { AuthGuardFn } from './components/guards/auth.guard';
+import { UserProfileComponent } from './components/user-profile/user.profile.component';
+import { AuthGuardFn } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'products/:id', component: DetailProductComponent },
   { path: 'orders', component: OrderComponent,canActivate:[AuthGuardFn] },
+  { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuardFn] },
   { path: 'orders/:id', component: OrderDetailComponent },
 ];
 

@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+import { UserProfileComponent } from './components/user-profile/user.profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { 
@@ -31,6 +32,7 @@ import {
     OrderDetailComponent, 
     LoginComponent, 
     RegisterComponent, 
+    UserProfileComponent,
     AppComponent
   ],
   imports: [
