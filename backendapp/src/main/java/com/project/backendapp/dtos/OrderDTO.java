@@ -30,6 +30,9 @@ public class OrderDTO {
     @Size(min = 8, message = "Phone number must be at least 8 characters")
     private String phoneNumber;
 
+    @JsonProperty("status")
+    private String status;
+
     private String address;
 
     private String note;

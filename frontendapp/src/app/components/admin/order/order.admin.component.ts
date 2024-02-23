@@ -6,8 +6,9 @@ import { CommonModule } from '@angular/common';
 import { Order } from 'src/app/models/order';
 import { OrderService } from 'src/app/services/order.service';
 import { Observable } from 'rxjs';
-import { environment } from 'src/app/environments/environment';
+import { environment } from 'src/environments/environment';
 import { OrderResponse } from 'src/app/responses/order/order.response';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-order-admin',
@@ -25,7 +26,9 @@ export class OrderAdminComponent implements OnInit{
 
   constructor(
     private orderService: OrderService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location
   ) {
 
   }
@@ -47,7 +50,7 @@ export class OrderAdminComponent implements OnInit{
       },
       error: (error: any) => {
         debugger;
-        console.error('Error fetching data:', error);
+        console.error('Error fetching products:', error);
       }
     });    
   }
@@ -72,10 +75,28 @@ export class OrderAdminComponent implements OnInit{
         .map((_, index) => startPage + index);
   }
   deleteOrder(id:number) {
-    
+    const confirmation = window
+      .confirm('Are you sure you want to delete this order?');
+    if (confirmation) {
+      debugger
+      this.orderService.deleteOrder(id).subscribe({
+        next: (response: any) => {
+          debugger 
+          location.reload();          
+        },
+        complete: () => {
+          debugger;          
+        },
+        error: (error: any) => {
+          debugger;
+          console.error('Error fetching products:', error);
+        }
+      });    
+    }
   }
   viewDetails(order:OrderResponse) {
     debugger
     this.router.navigate(['/admin/orders', order.id]);
   }
+  
 }

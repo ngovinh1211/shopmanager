@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'orders/:id', component: OrderDetailComponent },
   { path: 'contact', component: ContactComponent },
   //ADMIN
-  { path: 'admin', component: AdminComponent, canActivate:[AdminGuardFn] }
+  { path: 'admin/', component: AdminComponent, canActivate:[AdminGuardFn] }
 ];
 
 @NgModule({

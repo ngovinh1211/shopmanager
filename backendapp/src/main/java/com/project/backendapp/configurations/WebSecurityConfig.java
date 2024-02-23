@@ -2,14 +2,10 @@ package com.project.backendapp.configurations;
 
 import com.project.backendapp.filters.JwtTokenFilter;
 import com.project.backendapp.models.Role;
-
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,15 +13,19 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.CorsConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import java.util.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.springframework.http.HttpMethod.*;
 
 @Configuration
+//@EnableMethodSecurity
 @EnableWebSecurity()
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebMvc
@@ -46,7 +46,6 @@ public class WebSecurityConfig {
                                     String.format("%s/users/login", apiPrefix)
                             )
                             .permitAll()
-
                             .requestMatchers(GET,
                                     String.format("%s/roles**", apiPrefix)).permitAll()
 
@@ -83,7 +82,6 @@ public class WebSecurityConfig {
                             .requestMatchers(DELETE,
                                     String.format("%s/products/**", apiPrefix)).hasAnyRole(Role.ADMIN)
 
-
                             .requestMatchers(POST,
                                     String.format("%s/orders/**", apiPrefix)).hasAnyRole(Role.USER)
 
@@ -108,6 +106,9 @@ public class WebSecurityConfig {
                             .requestMatchers(DELETE,
                                     String.format("%s/order_details/**", apiPrefix)).hasRole(Role.ADMIN)
 
+                            .requestMatchers(GET,
+                                    String.format("%s/healthcheck/**", apiPrefix)).permitAll()
+
 
                             .anyRequest().authenticated();
                     //.anyRequest().permitAll();
@@ -131,5 +132,3 @@ public class WebSecurityConfig {
         return http.build();
     }
 }
-
-

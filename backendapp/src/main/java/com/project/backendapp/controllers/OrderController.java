@@ -90,7 +90,7 @@ public class OrderController {
     public ResponseEntity<String> deleteOrder(@Valid @PathVariable Long id) {
         try {
             orderService.deleteOrder(id);
-            return ResponseEntity.ok(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_ORDER_SUCCESSFULLY));
+            return ResponseEntity.ok(localizationUtils.getLocalizedMessage(MessageKeys.DELETE_ORDER_SUCCESSFULLY,id));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

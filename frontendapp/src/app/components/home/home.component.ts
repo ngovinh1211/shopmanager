@@ -3,7 +3,7 @@ import { Product } from '../../models/product';
 import { Category } from '../../models/category';
 import { ProductService } from 'src/app/services/product.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { environment } from 'src/app/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
 @Component({
