@@ -4,6 +4,7 @@ import com.project.backendapp.components.LocalizationUtils;
 import com.project.backendapp.dtos.OrderDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.models.Order;
+import com.project.backendapp.responses.OrderListResponse;
 import com.project.backendapp.responses.OrderResponse;
 import com.project.backendapp.services.IOrderService;
 import com.project.backendapp.utils.MessageKeys;
@@ -12,6 +13,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
@@ -88,6 +94,31 @@ public class OrderController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
 
+    @GetMapping("/get-orders-by-keyword")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity<OrderListResponse> getOrdersByKeyword(
+            @RequestParam(defaultValue = "", required = false) String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int limit
+    ) {
+        PageRequest pageRequest = PageRequest.of(
+                page,
+                limit,
+                //Sort.by("createdAt").descending()
+                Sort.by("id").ascending()
+        );
+        Page<OrderResponse> orderPage = orderService
+                .getOrdersByKeyword(keyword, pageRequest)
+                .map(OrderResponse::fromOrder);
+
+        int totalPages = orderPage.getTotalPages();
+        List<OrderResponse> orderResponses = orderPage.getContent();
+        return ResponseEntity.ok(OrderListResponse
+                .builder()
+                .orders(orderResponses)
+                .totalPages(totalPages)
+                .build());
     }
 }
