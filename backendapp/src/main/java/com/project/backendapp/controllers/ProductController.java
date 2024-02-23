@@ -11,6 +11,8 @@ import com.project.backendapp.responses.ProductResponse;
 import com.project.backendapp.services.IProductService;
 import com.project.backendapp.utils.MessageKeys;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -38,6 +40,7 @@ import java.util.stream.Collectors;
 @RequestMapping("${api.prefix}/products")
 @RequiredArgsConstructor
 public class ProductController {
+    private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
     private final IProductService productService;
     private  final LocalizationUtils localizationUtils;
     @PostMapping("")
@@ -163,14 +166,18 @@ public class ProductController {
 //                Sort.by("createdAt").descending());
                 Sort.by("id").ascending());
         Page<ProductResponse> productPage = productService.getAllProducts(keyword, categoryId, pageRequest);
+
         // get number of all pages
         int totalPages = productPage.getTotalPages();
         List<ProductResponse> products = productPage.getContent();
+        logger.info(String.format("keyword = %s, category_id = %d, page = %d, limit = %d",
+                keyword, categoryId, page, limit));
         return ResponseEntity.ok(ProductListResponse
                 .builder()
                 .products(products)
                 .totalPages(totalPages)
                 .build());
+
     }
 
     // http://localhost:8088/api/v1/products/6

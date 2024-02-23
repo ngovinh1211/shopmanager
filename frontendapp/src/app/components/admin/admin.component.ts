@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  adminComponent: string = 'orders';
+  //adminComponent: string = 'orders';
   userResponse?:UserResponse | null;
   constructor(
     private userService: UserService,       
@@ -30,6 +30,12 @@ export class AdminComponent implements OnInit {
     alert('Logged out successfully !~');
   }
   showAdminComponent(componentName: string): void {
-    this.adminComponent = componentName;
+    if(componentName=='orders') {
+      this.router.navigate(['/admin/orders']);
+    } else if(componentName=='categories') {
+      this.router.navigate(['/admin/categories']);
+    }else if(componentName=='products') {
+      this.router.navigate(['/admin/products']);
+    }
   }
 }

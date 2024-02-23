@@ -2,7 +2,8 @@
     <header class="header bg-success text-white d-flex justify-content-between">
         <h1 class="header-title"><i class="fa-brands fa-black-tie"></i> Admin Home</h1>
         <!-- Logout Button -->
-        <button class="btn btn-danger btn-sm" (click)="logout()">Logout <i class="fa-solid fa-right-to-bracket"></i></button>
+        <button class="btn btn-danger btn-sm" (click)="logout()">Logout <i
+                class="fa-solid fa-right-to-bracket"></i></button>
     </header>
     <div class="row">
         <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
@@ -27,11 +28,7 @@
             </div>
         </nav>
         <div class="col-md-10 col-lg-10 overflow-auto">
-            <ng-container [ngSwitch]="adminComponent">
-              <app-order-admin *ngSwitchCase="'orders'"></app-order-admin>
-              <app-product-admin *ngSwitchCase="'products'"></app-product-admin>
-              <app-category-admin *ngSwitchCase="'categories'"></app-category-admin>          
-            </ng-container>
-          </div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

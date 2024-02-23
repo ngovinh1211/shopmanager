@@ -26,6 +26,7 @@ import { OrderAdminComponent } from './components/admin/order/order.admin.compon
 import { CommonModule } from '@angular/common';
 import { ProductAdminComponent } from './components/admin/product/product.admin.component';
 import { CategoryAdminComponent } from './components/admin/category/category.admin.component';
+import { AdminModule } from './components/admin/admin.module';
 
 
 @NgModule({
@@ -42,10 +43,10 @@ import { CategoryAdminComponent } from './components/admin/category/category.adm
     AppComponent,
     ContactComponent,
     //ADMIN 
-    AdminComponent,
-    OrderAdminComponent,
-    ProductAdminComponent,
-    CategoryAdminComponent,
+    // AdminComponent,
+    // OrderAdminComponent,
+    // ProductAdminComponent,
+    // CategoryAdminComponent,
   ],
   imports: [
     CommonModule,
@@ -55,6 +56,7 @@ import { CategoryAdminComponent } from './components/admin/category/category.adm
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
+    AdminModule,
   ],
   providers: [
     {
