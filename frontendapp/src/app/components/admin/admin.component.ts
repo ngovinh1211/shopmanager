@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  adminComponent: string = 'orders';
   userResponse?:UserResponse | null;
   constructor(
     private userService: UserService,       
@@ -27,5 +28,8 @@ export class AdminComponent implements OnInit {
     this.userResponse = this.userService.getUserResponseFromLocalStorage();
     this.router.navigate(['/']);    
     alert('Logged out successfully !~');
+  }
+  showAdminComponent(componentName: string): void {
+    this.adminComponent = componentName;
   }
 }

@@ -19,16 +19,17 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminComponent, canActivate:[AdminGuardFn] },
   { path: 'products/:id', component: DetailProductComponent },
   { path: 'orders', component: OrderComponent,canActivate:[AuthGuardFn] },
   { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuardFn] },
   { path: 'orders/:id', component: OrderDetailComponent },
   { path: 'contact', component: ContactComponent },
+  //ADMIN
+  { path: 'admin', component: AdminComponent, canActivate:[AdminGuardFn] }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -22,6 +22,10 @@ import {
 } from '@angular/common/http';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { OrderAdminComponent } from './components/admin/order/order.admin.component';
+import { CommonModule } from '@angular/common';
+import { ProductAdminComponent } from './components/admin/product/product.admin.component';
+import { CategoryAdminComponent } from './components/admin/category/category.admin.component';
 
 
 @NgModule({
@@ -37,9 +41,14 @@ import { AdminComponent } from './components/admin/admin.component';
     UserProfileComponent,
     AppComponent,
     ContactComponent,
-    AdminComponent
+    //ADMIN 
+    AdminComponent,
+    OrderAdminComponent,
+    ProductAdminComponent,
+    CategoryAdminComponent,
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,

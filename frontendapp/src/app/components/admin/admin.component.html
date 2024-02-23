@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <header class="header bg-success text-white d-flex justify-content-between">
-        <h1 class="header-title">Dashboard Header</h1>
+        <h1 class="header-title"><i class="fa-brands fa-black-tie"></i> Admin Home</h1>
         <!-- Logout Button -->
         <button class="btn btn-danger btn-sm" (click)="logout()">Logout <i class="fa-solid fa-right-to-bracket"></i></button>
     </header>
@@ -9,22 +9,29 @@
             <div class="position-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="showAdminComponent('orders')">
                             <i class="fa-solid fa-shop"></i> Orders
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="showAdminComponent('categories')">
                             <i class="fa-solid fa-list"></i> Categories
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="showAdminComponent('products')">
                             <i class="fa-brands fa-shopify"></i> Products
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
+        <div class="col-md-10 col-lg-10 overflow-auto">
+            <ng-container [ngSwitch]="adminComponent">
+              <app-order-admin *ngSwitchCase="'orders'"></app-order-admin>
+              <app-product-admin *ngSwitchCase="'products'"></app-product-admin>
+              <app-category-admin *ngSwitchCase="'categories'"></app-category-admin>          
+            </ng-container>
+          </div>
     </div>
 </div>
