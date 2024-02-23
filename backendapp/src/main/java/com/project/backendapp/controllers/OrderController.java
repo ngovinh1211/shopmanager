@@ -80,7 +80,8 @@ public class OrderController {
 
         try {
             Order order = orderService.updateOrder(id, orderDTO);
-            return ResponseEntity.ok(order);
+            OrderResponse orderResponse = OrderResponse.fromOrder(order);
+            return ResponseEntity.ok(orderResponse);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

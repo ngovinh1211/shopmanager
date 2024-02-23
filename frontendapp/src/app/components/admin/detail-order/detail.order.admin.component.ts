@@ -83,7 +83,7 @@ export class DetailOrderAdminComponent implements OnInit{
           );
         }         
         this.orderResponse.shipping_method = response.shipping_method;        
-        this.orderResponse.status = response.status;     
+        // this.orderResponse.status = response.status;     
         debugger   
       },
       complete: () => {
