@@ -15,15 +15,17 @@
 .product-category {
     width: 200px;
     background-color: transparent;
-    color: white;
+    border-color: cyan !important; 
+    color: black !important;
+    margin-right: 10px;
 }
 
 .search-input {
-    width: 300px;
-    background-color: rgb(2, 0, 36);
+    width: 30%;
     margin-right: 10px;
     border-color: cyan;
-    color: $white-color;
+    color: black !important;
+    font-size: 18px !important;
 }
 .form-control {
     background-color: transparent;

@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <div class="form-check checkbox-text">
                         <span style="display: flex;">
-                            <input type="checkbox" class="form-check-input" id="remember">
+                            <input type="checkbox" class="form-check-input" id="remember" checked>
                             <label class="form-check-label text-start" for="remember">
                                 Remember me</label>
                         </span>
@@ -40,9 +40,10 @@
                 <button type="button" (click)="login()" class="login-button">Login</button>
                 <div class="divider"></div>
                 <p class="text-center">Don't have account ? <span>
-                    <a class="register-link" (click)="createAccount()">Create an Account</a>
-                </span></p>
+                        <a class="register-link" (click)="createAccount()">Create an Account</a>
+                    </span></p>
             </div>
         </div>
     </div>
-    <app-footer></app-footer>
+</div>
+<app-footer></app-footer>

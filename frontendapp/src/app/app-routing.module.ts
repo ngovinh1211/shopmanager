@@ -12,11 +12,14 @@ import { OrderDetailComponent } from './components/detail-order/order.detail.com
 import { UserProfileComponent } from './components/user-profile/user.profile.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AuthGuardFn } from './guards/auth.guard';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuardFn } from './guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'admin', component: AdminComponent, canActivate:[AdminGuardFn] },
   { path: 'products/:id', component: DetailProductComponent },
   { path: 'orders', component: OrderComponent,canActivate:[AuthGuardFn] },
   { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuardFn] },

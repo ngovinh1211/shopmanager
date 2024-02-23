@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="container">
     <div class="intro-section">
-        <h1>This is Home</h1>
-        <p>List of Product with pictures</p>
+        <h1>All the Products of Us</h1>
+        <p>You can search product by name or by category</p>
     </div>
     <!-- 1 search box on left, 1 combobox on right  -->
     <div class="search-box">
@@ -13,6 +13,7 @@
                 {{ category.name }}
             </option>
         </select>
+        <br/>
         <button class="btn btn-primary ml-2" (click)="searchProducts()">Search</button>
     </div>
     <div class="row">

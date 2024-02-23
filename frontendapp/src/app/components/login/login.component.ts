@@ -16,8 +16,10 @@ import { UserResponse } from '../../responses/user/user.response';
 })
 export class LoginComponent implements OnInit{
   @ViewChild('loginForm') loginForm!: NgForm;
-
-  phoneNumber: string = '0123456';
+  // user login
+  // phoneNumber: string = '01234567';
+  // password: string = '123456';
+  phoneNumber: string = '123456';
   password: string = '123456';
 
   roles: Role[] = []; 
@@ -86,8 +88,13 @@ export class LoginComponent implements OnInit{
                 date_of_birth: new Date(response.date_of_birth),
               };    
               this.userService.saveUserResponseToLocalStorage(this.userResponse);
-              alert(`Login successful ~~!`);
-              this.router.navigate(['/']);                      
+              if(this.userResponse?.role.name == 'admin') {
+                alert(`Login successful ~~!`);
+                this.router.navigate(['/admin']);    
+              } else if(this.userResponse?.role.name == 'user') {
+                alert(`Login successful ~~!`);
+                this.router.navigate(['/']);                      
+              }                      
             },
             complete: () => {
               debugger;

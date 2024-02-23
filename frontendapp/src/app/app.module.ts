@@ -21,6 +21,7 @@ import {
   HTTP_INTERCEPTORS 
 } from '@angular/common/http';
 import { ContactComponent } from './components/contact/contact.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ContactComponent } from './components/contact/contact.component';
     RegisterComponent, 
     UserProfileComponent,
     AppComponent,
-    ContactComponent
+    ContactComponent,
+    AdminComponent
   ],
   imports: [
     ReactiveFormsModule,
