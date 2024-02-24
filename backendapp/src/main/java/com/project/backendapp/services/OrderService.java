@@ -2,6 +2,8 @@ package com.project.backendapp.services;
 
 import com.project.backendapp.dtos.CartItemDTO;
 import com.project.backendapp.dtos.OrderDTO;
+import com.project.backendapp.dtos.OrderDetailDTO;
+import com.project.backendapp.dtos.OrderWithDetailsDTO;
 import com.project.backendapp.exceptions.DataNotFoundException;
 import com.project.backendapp.models.*;
 import com.project.backendapp.repositories.OrderDetailRepository;
@@ -78,7 +80,27 @@ public class OrderService implements IOrderService{
         orderDetailRepository.saveAll(orderDetails);
         return order;
     }
+    @Transactional
+    public Order updateOrderWithDetails(OrderWithDetailsDTO orderWithDetailsDTO) {
+        modelMapper.typeMap(OrderWithDetailsDTO.class, Order.class)
+                .addMappings(mapper -> mapper.skip(Order::setId));
+        Order order = new Order();
+        modelMapper.map(orderWithDetailsDTO, order);
+        Order savedOrder = orderRepository.save(order);
 
+        // Set the order for each order detail
+        for (OrderDetailDTO orderDetailDTO : orderWithDetailsDTO.getOrderDetailDTOS()) {
+            //orderDetail.setOrder(OrderDetail);
+        }
+
+        // Save or update the order details
+        List<OrderDetail> savedOrderDetails = orderDetailRepository.saveAll(order.getOrderDetails());
+
+        // Set the updated order details for the order
+        savedOrder.setOrderDetails(savedOrderDetails);
+
+        return savedOrder;
+    }
     @Override
     public Order getOrder(Long id) {
         return orderRepository.findById(id).orElse(null);

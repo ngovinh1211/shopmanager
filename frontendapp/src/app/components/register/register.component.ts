@@ -17,8 +17,8 @@ export class RegisterComponent {
   address: string;
   isAccepted: boolean;
   dateOfBirth: Date;
-
-  constructor( private router: Router,private userService: UserService) {
+  showPassword: boolean = false;
+  constructor(private router: Router, private userService: UserService) {
     this.phoneNumber = '';
     this.password = '';
     this.retypePassword = '';
@@ -40,9 +40,9 @@ export class RegisterComponent {
       `dateofbirth:${this.dateOfBirth}` +
       `address: ${this.address}` +
       `isAccepted: ${this.isAccepted}`;
-      //alert(message);
+    //alert(message);
     debugger
-    const registerDTO:RegisterDTO = {
+    const registerDTO: RegisterDTO = {
       "fullname": this.fullName,
       "phone_number": this.phoneNumber,
       "address": this.address,
@@ -52,27 +52,34 @@ export class RegisterComponent {
       "facebook_account_id": 0,
       "google_account_id": 0,
       "role_id": 2
-  }
+    }
     debugger
     this.userService.register(registerDTO).subscribe({
-      
+
       next: (response: any) => {
         debugger
-        
-        // this.router.navigate(['/login']);
+
+        const confirmation = window
+          .confirm('Register successfully ~! Press "OK" to continue to login page !~');
+        if (confirmation) {
+          this.router.navigate(['/login']);
+        }
       },
       complete: () => {
         debugger
         alert("register success")
       },
       error: (error: any) => {
-        alert(`Cannot register, error: ${error.error}`)
+        alert(error?.error?.message ?? '')
       }
     });
-    
+
+  }
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
   //check retype password matches with password and check age > 18(by month) 
-  
+
   checkPasswordsMatch() {
     if (this.password !== this.retypePassword) {
       this.registerForm.form.controls['retypePassword'].setErrors({ 'passwordMismatch': true });

@@ -29,6 +29,8 @@ export class OrderComponent {
     note: '', // additional
     total_money: 0, // calculate base on cart and coupon
     payment_method: 'cod', // COD as default
+    status: '',
+    shipping_date: new Date(),
     shipping_method: 'express', // Express as default
     coupon_code: '', //get from form
     cart_items: []
@@ -44,13 +46,13 @@ export class OrderComponent {
     private router: Router,
   ) {
     this.orderForm = this.formBuilder.group({
-      fullname: ['vinh', Validators.required], //full name is formControl required      
-      email: ['vinh123@gmail.com', [Validators.email]], // using Validators.email 
-      phone_number: ['99955595', [Validators.required, Validators.minLength(6)]], // phone_number required and at least 6 characters
-      address: ['400 Xa Dan', [Validators.required, Validators.minLength(5)]], // address required and at least 5 characters
-      note: ['high price '],
-      shipping_method: ['express'],
-      payment_method: ['cod']
+      fullname: ['', Validators.required], //full name is formControl required      
+      email: ['', [Validators.email]], // using Validators.email 
+      phone_number: ['', [Validators.required, Validators.minLength(6)]], // phone_number required and at least 6 characters
+      address: ['', [Validators.required, Validators.minLength(5)]], // address required and at least 5 characters
+      note: [''],
+      shipping_method: [''],
+      payment_method: ['']
     });
   }
 
@@ -96,7 +98,7 @@ export class OrderComponent {
   }
   placeOrder() {
     debugger
-    if (this.orderForm.valid) {
+    if (this.orderForm.errors == null) {
       /*
       this.orderData.fullname = this.orderForm.get('fullname')!.value;
       this.orderData.email = this.orderForm.get('email')!.value;

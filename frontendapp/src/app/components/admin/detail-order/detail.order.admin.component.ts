@@ -28,10 +28,11 @@ export class DetailOrderAdminComponent implements OnInit{
     address: '',
     note: '',
     order_date: new Date(),
-    status: '',
+    
     total_money: 0, 
     shipping_method: '',
     shipping_address: '',
+    status: '',
     shipping_date: new Date(),
     payment_method: '',
     order_details: [],
@@ -64,7 +65,7 @@ export class DetailOrderAdminComponent implements OnInit{
         if (response.order_date) {
           this.orderResponse.order_date = new Date(
             response.order_date[0], 
-            response.order_date[1] - 1, 
+            response.order_date[1] + 1, 
             response.order_date[2]
           );        
         }        
@@ -83,7 +84,7 @@ export class DetailOrderAdminComponent implements OnInit{
           );
         }         
         this.orderResponse.shipping_method = response.shipping_method;        
-        // this.orderResponse.status = response.status;     
+        this.orderResponse.status = response.status;     
         debugger   
       },
       complete: () => {

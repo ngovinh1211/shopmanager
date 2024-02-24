@@ -16,7 +16,11 @@ export class TokenService {
         localStorage.setItem(this.TOKEN_KEY, token);             
     }
     getUserId(): number {
-        let userObject = this.jwtHelperService.decodeToken(this.getToken() ?? '');
+        let token = this.getToken();
+        if (!token) {
+            return 0;
+        }
+        let userObject = this.jwtHelperService.decodeToken(token);
         // Check if userObject is null
         if (userObject === null) {
             return 0;

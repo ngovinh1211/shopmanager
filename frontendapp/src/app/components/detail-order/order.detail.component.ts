@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { OrderDTO } from '../../dtos/order/order.dto';
 import { OrderResponse } from 'src/app/responses/order/order.response';
 import { OrderDetail } from 'src/app/models/order.detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-order-detail',
@@ -32,7 +33,7 @@ export class OrderDetailComponent implements OnInit {
     payment_method: '',
     order_details: [] // empty array
   };  
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService,private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getOrderDetails();
@@ -40,7 +41,7 @@ export class OrderDetailComponent implements OnInit {
 
   getOrderDetails(): void {
     debugger
-    const orderId = 10; // fake ID.
+    const orderId = Number(this.route.snapshot.paramMap.get('orderId'));
     this.orderService.getOrderById(orderId).subscribe({
       next: (response: any) => {        
         debugger;       

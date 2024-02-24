@@ -19,12 +19,17 @@ export class OrderDTO {
   
   address: string;
 
+  status: string;
   
   note: string;
   
-  total_money: number;
+  total_money?: number;
+
+  order_date?: Date;
 
   shipping_method: string;
+
+  shipping_date: Date;
 
   payment_method: string;
 
@@ -38,12 +43,15 @@ export class OrderDTO {
     this.email = data.email;
     this.phone_number = data.phone_number;
     this.address = data.address;
+    this.status = data.status;
     this.note = data.note;
     this.total_money = data.total_money;
     this.shipping_method = data.shipping_method;
+    this.shipping_date = data.shipping_date;
     this.payment_method = data.payment_method;
     this.coupon_code = data.coupon_code;
     this.cart_items = data.cart_items;
+    this.order_date = data.order_date;
   }
 }
 

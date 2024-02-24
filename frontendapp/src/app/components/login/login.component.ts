@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit{
   // password: string = '123456';
   phoneNumber: string = '123456';
   password: string = '123456';
-
+  showPassword: boolean = false;
   roles: Role[] = []; 
   rememberMe: boolean = true;
   selectedRole: Role | undefined; // Save from dropdown
@@ -114,5 +114,8 @@ export class LoginComponent implements OnInit{
         alert(error.error.message);
       }
     });
+  }
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }
