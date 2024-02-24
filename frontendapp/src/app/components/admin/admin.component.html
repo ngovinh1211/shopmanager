@@ -10,17 +10,20 @@
             <div class="position-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="showAdminComponent('orders')">
+                        <a class="nav-link" (click)="showAdminComponent('orders')" routerLink="/admin/orders"
+                            routerLinkActive="active">
                             <i class="fa-solid fa-shop"></i> Orders
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="showAdminComponent('categories')">
+                        <a class="nav-link" (click)="showAdminComponent('categories')" routerLink="/admin/categories"
+                            routerLinkActive="active">
                             <i class="fa-solid fa-list"></i> Categories
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="showAdminComponent('products')">
+                        <a class="nav-link" (click)="showAdminComponent('products')" routerLink="/admin/products"
+                            routerLinkActive="active">
                             <i class="fa-brands fa-shopify"></i> Products
                         </a>
                     </li>

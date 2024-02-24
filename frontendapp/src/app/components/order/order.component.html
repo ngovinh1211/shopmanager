@@ -71,16 +71,8 @@
             <div class="col-md-6">
                 <h2 class="product-order">Products in cart</h2>
                 <table>
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-start">Product</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
                     <tbody>
-                        <ng-container *ngFor="let item of cartItems">
+                        <ng-container *ngFor="let item of cartItems; let i = index">
                             <tr>
                                 <td>
                                     <div class="product-info">
@@ -88,10 +80,22 @@
                                         <span class="product-name">{{ item.product.name }}</span>
                                     </div>
                                 </td>
-                                <td>{{ item.quantity }}</td>
+                                <td>
+                                    <div class="product-quantity">
+                                        <div class="border-wrapper">
+                                            <button (click)="decreaseQuantity(i)">-</button>
+                                            {{ item.quantity }}
+                                            <button (click)="increaseQuantity(i)">+</button>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>{{ item.product.price | currency:'$':'symbol':'1.0-0' }}</td>
-                                <td>{{ (item.product.price * item.quantity) | currency:'$':'symbol':'1.0-0'}}</td>
-
+                                <td>{{ (item.product.price * item.quantity) | number:'1.2-2' }}</td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="confirmDelete(i)">
+                                        Delete
+                                    </button>
+                                </td>
                             </tr>
                         </ng-container>
                     </tbody>

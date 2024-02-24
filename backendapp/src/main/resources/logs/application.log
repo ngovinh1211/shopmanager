@@ -1377,3 +1377,200 @@ Identify and stop the process that's listening on port 8088 or configure this ap
 2024-02-24 18:24:07.232 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
 2024-02-24 18:24:45.392 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
 2024-02-24 18:24:54.988 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 19:20:52.326 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 19:21:24.741 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 19:21:31.349 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 19:21:41.649 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 19:43:36.602 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 19:44:07.818 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:44:26.815 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:44:43.507 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:44:50.386 [http-nio-8088-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 19:44:55.194 [http-nio-8088-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 19:44:56.445 [http-nio-8088-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 19:44:56.993 [http-nio-8088-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 19:44:57.522 [http-nio-8088-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 19:44:58.146 [http-nio-8088-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 19:45:13.508 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:45:46.961 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:46:52.134 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:47:31.070 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:47:40.951 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:52:09.872 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:52:15.504 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:52:28.191 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:53:12.876 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 19:55:17.006 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:00:34.177 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:00:45.221 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:00:55.261 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:01:00.818 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:02:38.158 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:04:07.748 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:04:54.369 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:06:41.592 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:06:52.732 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:07:01.922 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:09:36.629 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:09:49.397 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:10:27.999 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:12:46.389 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:13:42.546 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:13:57.147 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:14:14.142 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:15:25.728 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:16:11.268 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:16:49.770 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:18:27.439 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:18:36.155 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:19:03.340 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:21:48.042 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:31:52.884 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:34:26.409 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:35:10.585 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:36:35.707 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:38:31.389 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:40:33.876 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:44:36.619 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:44:58.985 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:45:42.596 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:45:47.953 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:46:17.465 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:46:22.002 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-24 20:46:22.003 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-24 20:46:22.004 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-24 20:46:28.688 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-24 20:46:28.720 [main] INFO  c.p.backendapp.BackendappApplication - Starting BackendappApplication using Java 17.0.10 with PID 18996 (C:\Users\Administrator\Documents\GitHub\shopmanager\backendapp\target\classes started by Administrator in C:\Users\Administrator\Documents\GitHub\shopmanager\backendapp)
+2024-02-24 20:46:28.721 [main] INFO  c.p.backendapp.BackendappApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-24 20:46:29.290 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-24 20:46:29.346 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 7 JPA repository interfaces.
+2024-02-24 20:46:29.752 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+2024-02-24 20:46:29.758 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2024-02-24 20:46:29.760 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-24 20:46:29.760 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-24 20:46:29.793 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-24 20:46:29.793 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1028 ms
+2024-02-24 20:46:29.881 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-24 20:46:29.913 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-24 20:46:29.938 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-24 20:46:30.093 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-24 20:46:30.111 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-24 20:46:31.786 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ba35152
+2024-02-24 20:46:31.788 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-24 20:46:32.874 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-24 20:46:32.876 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-24 20:46:33.133 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-24 20:46:33.213 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-24 20:46:33.781 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1331742, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38c61ab, org.springframework.security.web.context.SecurityContextHolderFilter@38db8089, org.springframework.security.web.header.HeaderWriterFilter@770d65c2, org.springframework.web.filter.CorsFilter@68378acc, org.springframework.security.web.authentication.logout.LogoutFilter@48f9f1d6, com.project.backendapp.filters.JwtTokenFilter@425a5c2e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6183dd2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fe9851f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ea73927, org.springframework.security.web.access.ExceptionTranslationFilter@2e1a8c1a, org.springframework.security.web.access.intercept.AuthorizationFilter@2de5eb04]
+2024-02-24 20:46:33.981 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2024-02-24 20:46:33.995 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path ''
+2024-02-24 20:46:34.001 [main] INFO  c.p.backendapp.BackendappApplication - Started BackendappApplication in 5.566 seconds (process running for 6.028)
+2024-02-24 20:48:02.218 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-24 20:48:02.218 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-24 20:48:02.219 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-24 20:48:03.078 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 20:48:22.128 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 20:48:36.873 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:48:45.935 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 20:50:00.493 [http-nio-8088-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 20:50:52.848 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-24 20:50:52.850 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-24 20:50:52.854 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-24 20:50:56.518 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-24 20:50:56.548 [main] INFO  c.p.backendapp.BackendappApplication - Starting BackendappApplication using Java 17.0.10 with PID 10652 (C:\Users\Administrator\Documents\GitHub\shopmanager\backendapp\target\classes started by Administrator in C:\Users\Administrator\Documents\GitHub\shopmanager\backendapp)
+2024-02-24 20:50:56.549 [main] INFO  c.p.backendapp.BackendappApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-24 20:50:57.014 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-24 20:50:57.061 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 7 JPA repository interfaces.
+2024-02-24 20:50:57.433 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+2024-02-24 20:50:57.440 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2024-02-24 20:50:57.441 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-24 20:50:57.441 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-24 20:50:57.478 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-24 20:50:57.478 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 899 ms
+2024-02-24 20:50:57.553 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-24 20:50:57.587 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-24 20:50:57.609 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-24 20:50:57.769 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-24 20:50:57.788 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-24 20:50:59.456 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@214fba74
+2024-02-24 20:50:59.458 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-24 20:51:00.564 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-24 20:51:00.567 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-24 20:51:00.827 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-24 20:51:00.904 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-24 20:51:01.498 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@194e116d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3471bdfd, org.springframework.security.web.context.SecurityContextHolderFilter@12e9e909, org.springframework.security.web.header.HeaderWriterFilter@19fc48a0, org.springframework.web.filter.CorsFilter@93231b2, org.springframework.security.web.authentication.logout.LogoutFilter@3a4e3343, com.project.backendapp.filters.JwtTokenFilter@3e7fc07e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22f10ff6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ff185a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cf97391, org.springframework.security.web.access.ExceptionTranslationFilter@3abe3f9a, org.springframework.security.web.access.intercept.AuthorizationFilter@59fe8d94]
+2024-02-24 20:51:01.698 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2024-02-24 20:51:01.711 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path ''
+2024-02-24 20:51:01.717 [main] INFO  c.p.backendapp.BackendappApplication - Started BackendappApplication in 5.439 seconds (process running for 5.972)
+2024-02-24 20:51:29.664 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-24 20:51:29.664 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-24 20:51:29.666 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-24 20:51:30.274 [http-nio-8088-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 20:51:42.135 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:51:44.609 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:51:50.709 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:51:53.165 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:52:54.261 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:52:58.361 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-24 20:53:08.826 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:53:15.949 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:53:39.217 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:54:05.359 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 20:54:56.892 [http-nio-8088-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 20:55:38.857 [http-nio-8088-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-02-24 21:00:43.639 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:02:12.727 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:02:17.481 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 25, limit = 12
+2024-02-24 21:02:40.244 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 25, limit = 12
+2024-02-24 21:02:47.829 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:11:50.918 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:12:00.779 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 25, limit = 12
+2024-02-24 21:12:03.417 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:12:52.094 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:13:09.376 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:20:59.671 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:21:05.335 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:23:10.624 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-24 21:23:10.625 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-24 21:23:10.627 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-24 21:23:14.987 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-24 21:23:15.034 [main] INFO  c.p.backendapp.BackendappApplication - Starting BackendappApplication using Java 17.0.10 with PID 17868 (C:\Users\Administrator\Documents\GitHub\shopmanager\backendapp\target\classes started by Administrator in C:\Users\Administrator\Documents\GitHub\shopmanager\backendapp)
+2024-02-24 21:23:15.035 [main] INFO  c.p.backendapp.BackendappApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-24 21:23:15.606 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-24 21:23:15.663 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 7 JPA repository interfaces.
+2024-02-24 21:23:16.122 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+2024-02-24 21:23:16.129 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2024-02-24 21:23:16.131 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-24 21:23:16.131 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-24 21:23:16.177 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-24 21:23:16.177 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1103 ms
+2024-02-24 21:23:16.271 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-24 21:23:16.313 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-24 21:23:16.354 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-24 21:23:16.544 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-24 21:23:16.571 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-24 21:23:18.233 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@750e2d33
+2024-02-24 21:23:18.235 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-24 21:23:19.454 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-24 21:23:19.456 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-24 21:23:19.768 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-24 21:23:19.861 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-24 21:23:20.482 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d62648d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59fe8d94, org.springframework.security.web.context.SecurityContextHolderFilter@7b338d46, org.springframework.security.web.header.HeaderWriterFilter@50564f77, org.springframework.web.filter.CorsFilter@479f5c35, org.springframework.security.web.authentication.logout.LogoutFilter@b807b32, com.project.backendapp.filters.JwtTokenFilter@609edb55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3edea9e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75d70348, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37264d08, org.springframework.security.web.access.ExceptionTranslationFilter@236ec794, org.springframework.security.web.access.intercept.AuthorizationFilter@c8d0ea3]
+2024-02-24 21:23:20.707 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2024-02-24 21:23:20.722 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path ''
+2024-02-24 21:23:20.728 [main] INFO  c.p.backendapp.BackendappApplication - Started BackendappApplication in 6.076 seconds (process running for 6.706)
+2024-02-24 21:23:47.193 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-24 21:23:47.193 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-24 21:23:47.195 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-02-24 21:23:49.054 [http-nio-8088-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1451, SQLState: 23000
+2024-02-24 21:23:49.054 [http-nio-8088-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Cannot delete or update a parent row: a foreign key constraint fails (`shopmanager`.`order_details`, CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`))
+2024-02-24 21:24:55.784 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:25:12.157 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:25:14.133 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:25:19.588 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 12
+2024-02-24 21:25:23.634 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:25:35.511 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:39:40.835 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:39:50.766 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:40:12.242 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12
+2024-02-24 21:40:49.633 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 24, limit = 12

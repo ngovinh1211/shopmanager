@@ -9,6 +9,7 @@ import { LoginResponse } from '../../responses/user/login.response';
 import { Role } from '../../models/role'; 
 import { UserResponse } from '../../responses/user/user.response';
 
+import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit{
   phoneNumber: string = '123456';
   password: string = '123456';
   showPassword: boolean = false;
+
   roles: Role[] = []; 
   rememberMe: boolean = true;
   selectedRole: Role | undefined; // Save from dropdown
@@ -36,7 +38,8 @@ export class LoginComponent implements OnInit{
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
     private tokenService: TokenService,
-    private roleService: RoleService
+    private roleService: RoleService,
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
@@ -97,6 +100,7 @@ export class LoginComponent implements OnInit{
               }                      
             },
             complete: () => {
+              this.cartService.refreshCart();
               debugger;
             },
             error: (error: any) => {

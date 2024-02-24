@@ -1,6 +1,16 @@
 
 <div class="container-fluid">
   <h1>All Orders List</h1>
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <input type="text" 
+        class="form-control search-input" placeholder="Seach Order..." 
+        [(ngModel)]="keyword">
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="searchOrders()">Seach</button>
+    </div>
+  </div>
   <table class="table">
       <thead>
         <tr>
@@ -34,8 +44,7 @@
             <div style="display: flex; gap: 10px;">
             <button 
               (click)="viewDetails(order)"
-                  class="btn btn-primary"
-                  style="white-space: nowrap;">
+                  class="btn btn-primary">
                   View Details
             </button>
             <button class="btn btn-danger" 

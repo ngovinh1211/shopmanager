@@ -5,7 +5,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-
+import { TokenService } from '../../services/token.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -25,12 +25,14 @@ export class HomeComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,    
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
     ) {}
 
   ngOnInit() {
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
-    this.getCategories(1, 100);
+    this.currentPage = Number(localStorage.getItem('currentProductPage')) || 0; 
+      this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+      this.getCategories(0, 100);
   }
   getCategories(page: number, limit: number) {
     this.categoryService.getCategories(page, limit).subscribe({
@@ -75,8 +77,9 @@ export class HomeComponent implements OnInit {
   }
   onPageChange(page: number) {
     debugger;
-    this.currentPage = page;
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+    this.currentPage = page < 0 ? 0 : page;
+      localStorage.setItem('currentProductPage', String(this.currentPage)); 
+      this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
   }
 
   generateVisiblePageArray(currentPage: number, totalPages: number): number[] {

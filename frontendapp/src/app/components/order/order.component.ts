@@ -20,6 +20,7 @@ export class OrderComponent {
   cartItems: { product: Product, quantity: number }[] = [];
   couponCode: string = ''; // coupon
   totalAmount: number = 0; // total amount
+  cart: Map<number, number> = new Map();
   orderData: OrderDTO = {
     user_id: 0,
     fullname: '', // get from form
@@ -62,8 +63,8 @@ export class OrderComponent {
     this.orderData.user_id = this.tokenService.getUserId();    
     // get list product from cart
     debugger
-    const cart = this.cartService.getCart();
-    const productIds = Array.from(cart.keys());
+    this.cart = this.cartService.getCart();
+    const productIds = Array.from(this.cart.keys());
 
     // call service to get list product from ID
     debugger
@@ -81,7 +82,7 @@ export class OrderComponent {
           }
           return {
             product: product!,
-            quantity: cart.get(productId)!
+            quantity: this.cart.get(productId)!
           };
         });
         console.log('get product test');
@@ -141,6 +142,22 @@ export class OrderComponent {
     }        
   }
 
+  decreaseQuantity(index: number): void {
+    if (this.cartItems[index].quantity > 1) {
+      this.cartItems[index].quantity--;
+      // Cập nhật lại this.cart từ this.cartItems
+      this.updateCartFromCartItems();
+      this.calculateTotal();
+    }
+  }
+  
+  increaseQuantity(index: number): void {
+    this.cartItems[index].quantity++;   
+    // Cập nhật lại this.cart từ this.cartItems
+    this.updateCartFromCartItems();
+    this.calculateTotal();
+  }    
+
   // calculate total money
   calculateTotal(): void {
     this.totalAmount = this.cartItems.reduce(
@@ -152,5 +169,22 @@ export class OrderComponent {
 
   applyCoupon(): void {
     //update total money if has coupon
+  }
+  confirmDelete(index: number): void {
+    if (confirm('Are you sure to delete this product?')) {
+      // Xóa sản phẩm khỏi danh sách cartItems
+      this.cartItems.splice(index, 1);
+      // Cập nhật lại this.cart từ this.cartItems
+      this.updateCartFromCartItems();
+      // Tính toán lại tổng tiền
+      this.calculateTotal();
+    }
+  }
+  private updateCartFromCartItems(): void {
+    this.cart.clear();
+    this.cartItems.forEach((item) => {
+      this.cart.set(item.product.id, item.quantity);
+    });
+    this.cartService.setCart(this.cart);
   }
 }

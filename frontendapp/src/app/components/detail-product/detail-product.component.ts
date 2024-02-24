@@ -6,6 +6,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
 import { Product } from '../../models/product';
 import { ProductImage } from 'src/app/models/product.image';
+
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -19,6 +20,7 @@ export class DetailProductComponent implements OnInit {
   productId: number = 0;
   currentImageIndex: number = 0;
   quantity: number = 1;
+  isPressedAddToCart:boolean = false;
   constructor(
     private productService: ProductService,
     private cartService: CartService,
@@ -92,6 +94,7 @@ export class DetailProductComponent implements OnInit {
     }      
     addToCart(): void {
       debugger
+      this.isPressedAddToCart = true;
       if (this.product) {
         this.cartService.addToCart(this.product.id, this.quantity);
         alert('Added to cart.')
@@ -110,14 +113,15 @@ export class DetailProductComponent implements OnInit {
         this.quantity--;
       }
     }
-    
-    buyNow(): void {
-      // When user want to buy now 
+    getTotalPrice(): number {
       if (this.product) {
-        this.cartService.addToCart(this.product.id, this.quantity);
-      } else {
-        // Check when product is null
-        console.error('Cannot add product to cart because product is null.');
+        return this.product.price * this.quantity;
+      }
+      return 0;
+    }
+    buyNow(): void {
+      if(this.isPressedAddToCart == false) {
+        this.addToCart();
       }
       this.router.navigate(['/orders']);
     }    

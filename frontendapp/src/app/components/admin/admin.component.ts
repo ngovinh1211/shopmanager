@@ -22,7 +22,9 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.userResponse = this.userService.getUserResponseFromLocalStorage();    
     //default router
-    this.router.navigate(['/admin/orders']);
+    if (this.router.url === '/admin') {
+      this.router.navigate(['/admin/orders']);
+    }
    }  
   logout() {
     this.userService.removeUserFromLocalStorage();
@@ -32,11 +34,11 @@ export class AdminComponent implements OnInit {
     alert('Logged out successfully !~');
   }
   showAdminComponent(componentName: string): void {
-    if(componentName=='orders') {
+    if(componentName === 'orders') {
       this.router.navigate(['/admin/orders']);
-    } else if(componentName=='categories') {
+    } else if(componentName === 'categories') {
       this.router.navigate(['/admin/categories']);
-    }else if(componentName=='products') {
+    }else if(componentName === 'products') {
       this.router.navigate(['/admin/products']);
     }
   }
