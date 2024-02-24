@@ -67,7 +67,6 @@ export class RegisterComponent {
       },
       complete: () => {
         debugger
-        alert("register success")
       },
       error: (error: any) => {
         alert(error?.error?.message ?? '')

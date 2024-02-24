@@ -57,6 +57,7 @@ public class UserService implements IUserService {
                 .build();
 
         newUser.setRole(role);
+        newUser.setActive(true);
         // check if existing accountid then no need password
         if (userDTO.getFacebookAccountId() == 0 && userDTO.getGoogleAccountId() == 0) {
             String password = userDTO.getPassword();
