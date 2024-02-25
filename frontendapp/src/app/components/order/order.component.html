@@ -90,7 +90,7 @@
                                     </div>
                                 </td>
                                 <td>{{ item.product.price | currency:'$':'symbol':'1.0-0' }}</td>
-                                <td>{{ (item.product.price * item.quantity) | number:'1.2-2' }}</td>
+                                <td>{{ (item.product.price * item.quantity) | currency:'$':'symbol':'1.0-0'}}</td>
                                 <td>
                                     <button class="btn btn-danger" (click)="confirmDelete(i)">
                                         Delete

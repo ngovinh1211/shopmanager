@@ -11,6 +11,10 @@ import com.project.backendapp.repositories.*;
 import com.project.backendapp.exceptions.*;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +24,7 @@ public class ProductService implements IProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
     private final ProductImageRepository productImageRepository;
-
+    private static String UPLOADS_FOLDER = "uploads";
     @Override
     @Transactional
     public Product createProduct(ProductDTO productDTO) throws DataNotFoundException {
@@ -104,6 +108,18 @@ public class ProductService implements IProductService {
     public void deleteProduct(long id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         optionalProduct.ifPresent(productRepository::delete);
+    }
+
+    @Override
+    public void deleteFile(String filename) throws IOException {
+        java.nio.file.Path uploadDir = Paths.get(UPLOADS_FOLDER);
+        java.nio.file.Path filePath = uploadDir.resolve(filename);
+
+        if (Files.exists(filePath)) {
+            Files.delete(filePath);
+        } else {
+            throw new FileNotFoundException("File not found: " + filename);
+        }
     }
 
     @Override

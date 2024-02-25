@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit{
   // user login
   // phoneNumber: string = '01234567';
   // password: string = '123456';
-  phoneNumber: string = '123456';
-  password: string = '123456';
+  phoneNumber: string = '';
+  password: string = '';
   showPassword: boolean = false;
 
   roles: Role[] = []; 

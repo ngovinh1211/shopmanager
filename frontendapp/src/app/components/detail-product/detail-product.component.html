@@ -40,8 +40,8 @@
           <div class="product-details">
             <h2>{{ product?.name }}</h2>
             <p>{{ product?.description }}</p>
-            <p>Price: ${{ product?.price }}</p>
-            <p>Total: ${{ getTotalPrice() | number:'1.2-2' }}</p>
+            <p>Price: {{ product?.price | currency:'$':'symbol':'1.0-0'}}</p>
+            <p>Total: {{ getTotalPrice() | currency:'$':'symbol':'1.0-0' }}</p>
             <div class="product-actions">
               <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
               <button class="btn btn-success" (click)="buyNow()">Buy Now</button>

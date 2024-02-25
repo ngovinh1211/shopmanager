@@ -8,6 +8,7 @@ import com.project.backendapp.responses.ProductResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface IProductService {
@@ -23,4 +24,5 @@ public interface IProductService {
             Long productId,
             ProductImageDTO productImageDTO) throws Exception;
     List<Product> findProductsByIds(List<Long> productIds);
+    void deleteFile(String filename) throws IOException;
 }

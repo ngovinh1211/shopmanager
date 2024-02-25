@@ -3,7 +3,7 @@
     height: 100%;
 }
 .login-form {
-    background-color: rgb(48, 48, 143);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 20px;
     max-width: 500px;
@@ -13,13 +13,17 @@
 }
 .login-header {
     text-align: center;
-    color: rgb(105, 244, 181);
+    color: rgb(253, 70, 70);
     margin-bottom: 20px;
+}
+.text-center{
+    color: #000000;
 }
 .form-control {
     background-color: transparent;
-    border: none;
-    color: white;
+    border-color: rgb(0, 0, 0);
+    border-style:dashed;
+    color: rgb(0, 0, 0);
 }
 .form-control:focus {
     color: white;
@@ -37,14 +41,14 @@
 }
 .password-toggle {
     position: absolute;
-    top: 50%;
+    top: 70%;
     right: 10px;
     transform: translateY(-50%);
-    color: rgb(105, 244, 181);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 .checkbox-text {
-    color: rgb(243, 165, 42);
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +65,7 @@
 }
 
 .register-link {
-    color: rgb(105, 244, 181);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 .register-link:hover{
@@ -71,7 +75,7 @@
 .access-right {
     margin-top: 20px;
     width: 200px;
-    border: 1px solid #00FFFF;
+    border: 1px solid #000000;
 }
 
 .access-right:focus {
@@ -80,7 +84,7 @@
 
 .form-control::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(243, 165, 42, 0.4);
+    color: rgba(0, 0, 0, 0.4);
     opacity: 1;
     /* Firefox */
 }
@@ -88,7 +92,7 @@
 
 
 .login-button {
-    background: linear-gradient(to right, rgb(64, 147, 225), rgb(43, 175, 237));
+    background: linear-gradient(to right, rgb(238, 255, 7), rgb(235, 5, 215));
     color: white;
     border-radius: 30px;
     width: 100%;
@@ -98,7 +102,7 @@
 }
 .divider {
     height: 1px;
-    background-color: rgb(243, 165, 42);
+    background-color: rgb(0, 0, 0);
     /* background-color: rgb(105, 244, 181) */
     margin: 20px;
 }

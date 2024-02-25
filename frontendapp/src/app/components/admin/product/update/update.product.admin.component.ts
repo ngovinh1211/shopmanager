@@ -87,6 +87,7 @@ export class UpdateProductAdminComponent implements OnInit {
       },
       complete: () => {
         debugger;
+        alert("Update Product Success ~!")
         this.router.navigate(['/admin/products']);        
       },
       error: (error: any) => {
@@ -152,6 +153,7 @@ export class UpdateProductAdminComponent implements OnInit {
       // Call the removeImage() method to remove the image   
       this.productService.deleteProductImage(productImage.id).subscribe({
         next:(productImage: ProductImage) => {
+          alert("Delete image successfully ~!")
           location.reload();          
         },        
         error: (error) => {
