@@ -77,11 +77,10 @@ export class DetailOrderAdminComponent implements OnInit{
         });        
         this.orderResponse.payment_method = response.payment_method;
         if (response.shipping_date) {
-          this.orderResponse.shipping_date = new Date(
-            response.shipping_date[0],
-            response.shipping_date[1] - 1,
-            response.shipping_date[2]
-          );
+          const today = new Date();
+          const tomorrow = new Date(today);
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          this.orderResponse.shipping_date = tomorrow;
         }         
         this.orderResponse.shipping_method = response.shipping_method;        
         this.orderResponse.status = response.status;     

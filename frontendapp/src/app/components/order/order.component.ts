@@ -114,6 +114,10 @@ export class OrderComponent {
         ...this.orderData,
         ...this.orderForm.value
       };
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      this.orderData.shipping_date = tomorrow ;
       this.orderData.cart_items = this.cartItems.map(cartItem => ({
         product_id: cartItem.product.id,
         quantity: cartItem.quantity

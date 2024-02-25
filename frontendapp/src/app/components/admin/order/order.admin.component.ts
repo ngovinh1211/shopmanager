@@ -18,7 +18,7 @@ import { Location } from '@angular/common';
 export class OrderAdminComponent implements OnInit{  
   orders: OrderResponse[] = [];
   currentPage: number = 0;
-  itemsPerPage: number = 12;
+  itemsPerPage: number = 5;
   pages: number[] = [];
   totalPages:number = 0;
   keyword:string = "";

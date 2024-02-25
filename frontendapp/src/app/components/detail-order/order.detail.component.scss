@@ -31,13 +31,14 @@ table {
     border-collapse: separate;
     border: 1px solid white;
     border-spacing: 0;    
-    background-color: rgb(12, 13, 54);    
+    background-color: rgb(59, 59, 59);  
 }
 
 th,
 td {
     padding: 10px;
     text-align: center;
+    color: white !important;
 }
 .btn-gradient {
     background: linear-gradient(to right, rgb(64, 147, 225), rgb(43, 175, 237));

@@ -37,7 +37,7 @@ export class ProductAdminComponent implements OnInit {
     }    
     searchProducts() {
       this.currentPage = 0;
-      this.itemsPerPage = 12;
+      this.itemsPerPage = 5;
       //Mediocre Iron Wallet
       debugger
       this.getProducts(this.keyword.trim(), this.selectedCategoryId, this.currentPage, this.itemsPerPage);
