@@ -7,23 +7,23 @@
     text-align: center;
 }
 .product-header {
-    color: rgb(12, 212, 226);
+    color: white!important;
 }
 .form-control {
-    background-color: rgb(19, 23, 42);
+    background-color: white!important;
     border: 1px solid rgb(29, 33, 54);
-    color: white;
+    color: black;
 }
 
 .form-control:focus {
-    border-color: white;
-    background-color: rgb(19, 23, 42);
+    border-color: cyan!important;
+    background-color: white;
 }
 .form-label {
-    color: white;
+    color: white!important;
 }
 .product-order {
-    color: rgb(105, 244, 181);
+    color: white!important;
 }
 table {
     width: 100%;
@@ -32,7 +32,7 @@ table {
     border-collapse: separate;
     border: 1px solid white;
     border-spacing: 0;
-    background-color: rgb(12, 13, 54);    
+    background-color: rgb(59, 59, 59);   
 }
 
 th,
@@ -94,4 +94,10 @@ td {
 
 .product-quantity input:focus {
     outline: none;
+}
+.nametd{
+    padding-left: 50px;
+}
+.quantitytd{
+    margin-left: 10px;
 }

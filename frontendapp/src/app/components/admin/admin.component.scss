@@ -4,7 +4,7 @@
     padding-right: 0 !important; /* Remove right padding */
 }
 .header {
-    background-color: #333;
+    background-color:rgb(22, 22, 22)!important;;
     /* Header background color */
     color: white;
     /* Text color */
@@ -14,7 +14,7 @@
     /* Center-align text in the header */
 }
 #sidebar {
-    background-color: #007bff !important; /* Primary color */
+    background-color: rgb(32, 32, 32)!important; /* Primary color */
     color: white; /* Text color */
     height: 100vh;
     overflow-y: auto; /* Add scrollbars if content overflows */
@@ -22,11 +22,11 @@
 /* Custom CSS for sidebar links */
 #sidebar a {
     color: white; /* Text color for links */
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Add a border line at the top of each link */
+    border-top: 1px solid rgb(54, 54, 54)!important; /* Add a border line at the top of each link */
     padding: 10px 15px; /* Add padding to links for spacing */
 }
 /* Custom CSS for active link */
-#sidebar a.active {
+#sidebar a.black {
     font-weight: bold; /* Highlight active link */
 }
 /* Change background color on hover */

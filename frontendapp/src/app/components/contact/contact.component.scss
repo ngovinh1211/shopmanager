@@ -21,6 +21,10 @@ a {
 
 .contact__address_item p {
     font-size: 16px;
+    
+}
+.contact__address{
+    color: white!important;
 }
 
 .form__feedback {
@@ -205,8 +209,7 @@ textarea:focus {
 /* PC */
 
 @media (min-width: 1024px) {
-    .contact {
-    }
+    
     .contact__content {
         padding-bottom: 20px;
 
@@ -237,7 +240,7 @@ textarea:focus {
         display: block;
         width: 100%;
         height: 1px;
-        background-color: #534040;
+        background-color: white!important;
         margin-top: 15px;
     }
     .form-group-column {

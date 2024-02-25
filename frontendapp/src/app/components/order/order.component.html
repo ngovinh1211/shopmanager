@@ -8,8 +8,8 @@
             <div class="col-md-6">
                 <h2 class="product-header">Receiver Information</h2>
                 <div class="mb-3">
-                    <label for="fullname" class="form-label">Full Name</label>
-                    <input type="text" formControlName="fullname" class="form-control" id="fullname"
+                    <label for="fullname"  class="form-label">Full Name</label>
+                    <input type="text" formControlName="fullname" placeholder="Enter your Name" class="form-control" id="fullname"
                         [class.is-invalid]="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched">
                     <div *ngIf="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched"
                         class="invalid-feedback">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" formControlName="email" class="form-control" id="email"
+                    <input type="text" formControlName="email" placeholder="Enter your Email" class="form-control" id="email"
                         [class.is-invalid]="orderForm.get('email')!.invalid && orderForm.get('email')!.touched">
                     <div *ngIf="orderForm.get('email')!.invalid && orderForm.get('email')!.touched"
                         class="invalid-feedback">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="shippingMethod">Shipping Method</label>
-                    <select class="form-control" id="shippingMethod" formControlName="shipping_method">
+                    <select class="form-control"  id="shippingMethod" formControlName="shipping_method">
                         <option value="express">Fast (Express)</option>
                         <option value="normal">Slow (Normal)</option>
                     </select>
@@ -71,6 +71,13 @@
             <div class="col-md-6">
                 <h2 class="product-order">Products in cart</h2>
                 <table>
+                    <thead>
+                        <td class="nametd">Name</td>
+                        <td class="quantitytd">Quantity</td>
+                        <td>Price</td>
+                        <td>Total</td>
+                        <td></td>
+                    </thead>
                     <tbody>
                         <ng-container *ngFor="let item of cartItems; let i = index">
                             <tr>

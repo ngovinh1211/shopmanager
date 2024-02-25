@@ -36,9 +36,12 @@
 }
 
 .thumbnail-item.active {
-    border: 2px solid white;
+    border: 3px solid cyan!important;
+    
 }
-
+.fa-solid{
+    color: #FFD700;
+}
 .product-details {
     color: white;
     padding: 20px;
@@ -64,7 +67,6 @@
     justify-content: flex-start;
     margin-top: 10px;
 }
-
 .product-quantity button {
     background-color: transparent;
     border: none;

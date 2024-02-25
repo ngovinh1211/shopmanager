@@ -2104,3 +2104,160 @@ Identify and stop the process that's listening on port 8088 or configure this ap
 2024-02-25 21:34:31.323 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-02-25 21:34:31.325 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-02-25 21:34:31.330 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-25 21:44:37.281 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-25 21:44:37.316 [main] INFO  c.p.backendapp.BackendappApplication - Starting BackendappApplication using Java 17.0.8 with PID 2124 (C:\Users\sonbo\Documents\GitHub\shopapp\backendapp\target\classes started by sonbo in C:\Users\sonbo\Documents\GitHub\shopapp\backendapp)
+2024-02-25 21:44:37.317 [main] INFO  c.p.backendapp.BackendappApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-25 21:44:37.864 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-25 21:44:37.921 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 7 JPA repository interfaces.
+2024-02-25 21:44:38.319 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+2024-02-25 21:44:38.325 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2024-02-25 21:44:38.327 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-25 21:44:38.327 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-25 21:44:38.376 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-25 21:44:38.376 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1028 ms
+2024-02-25 21:44:38.459 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-25 21:44:38.497 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-25 21:44:38.519 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-25 21:44:38.706 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-25 21:44:38.724 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-25 21:44:40.626 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f7a20da
+2024-02-25 21:44:40.629 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-25 21:44:41.727 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-25 21:44:41.729 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-25 21:44:42.039 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-25 21:44:42.122 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-25 21:44:42.787 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a0379e2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50564f77, org.springframework.security.web.context.SecurityContextHolderFilter@68aa505b, org.springframework.security.web.header.HeaderWriterFilter@2d6d0cf6, org.springframework.web.filter.CorsFilter@6fb9179e, org.springframework.security.web.authentication.logout.LogoutFilter@34c9c4be, com.project.backendapp.filters.JwtTokenFilter@372e972d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2149532d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b21b0f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3abe3f9a, org.springframework.security.web.access.ExceptionTranslationFilter@2463a9ec, org.springframework.security.web.access.intercept.AuthorizationFilter@5c8adab7]
+2024-02-25 21:44:42.983 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2024-02-25 21:44:42.999 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path ''
+2024-02-25 21:44:43.007 [main] INFO  c.p.backendapp.BackendappApplication - Started BackendappApplication in 6.036 seconds (process running for 6.725)
+2024-02-25 21:44:43.139 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-25 21:44:43.139 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-25 21:44:43.140 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-25 21:44:43.982 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 21:44:58.508 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 21:45:07.847 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 21:45:10.276 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:18:32.398 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:19:51.558 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:28:15.887 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:09.802 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:11.586 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:15.075 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:21.562 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:27.118 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:32.092 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:40.285 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 9
+2024-02-25 22:30:48.504 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:33:08.295 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:34:46.127 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:35:58.892 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:35:59.819 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:36:00.119 [http-nio-8088-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.IllegalStateException: Cannot call sendError() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.checkCommitted(ResponseFacade.java:485)
+	at org.apache.catalina.connector.ResponseFacade.sendError(ResponseFacade.java:329)
+	at jakarta.servlet.http.HttpServletResponseWrapper.sendError(HttpServletResponseWrapper.java:89)
+	at jakarta.servlet.http.HttpServletResponseWrapper.sendError(HttpServletResponseWrapper.java:89)
+	at jakarta.servlet.http.HttpServletResponseWrapper.sendError(HttpServletResponseWrapper.java:89)
+	at org.springframework.security.web.util.OnCommittedResponseWrapper.sendError(OnCommittedResponseWrapper.java:126)
+	at com.project.backendapp.filters.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:65)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-25 22:36:13.224 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:39:34.900 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:39:47.687 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:40:03.998 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:40:49.989 [http-nio-8088-exec-1] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 22:46:10.222 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:00:06.599 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:01:32.141 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:01:43.706 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:02:42.544 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:02:46.795 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:03:21.822 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:03:35.062 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:03:49.105 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:03:57.176 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:04:50.967 [http-nio-8088-exec-6] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:05:02.995 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:05:28.765 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:05:43.353 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:06:47.962 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:07:14.093 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:07:25.288 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:07:38.160 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:08:04.634 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:08:14.690 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:08:42.600 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:09:33.140 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:09:56.718 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:09:59.542 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:10:21.422 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:10:57.270 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:11:04.496 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:11:24.851 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 3, limit = 9
+2024-02-25 23:11:40.731 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 7, limit = 9
+2024-02-25 23:11:41.422 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-25 23:11:44.694 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 2, limit = 9
+2024-02-25 23:11:50.774 [http-nio-8088-exec-7] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-25 23:12:08.514 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-25 23:30:44.358 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-25 23:31:03.642 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-25 23:51:37.337 [http-nio-8088-exec-5] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-26 00:02:18.390 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-26 00:02:20.801 [http-nio-8088-exec-4] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-26 00:20:06.721 [http-nio-8088-exec-2] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-26 00:25:52.822 [http-nio-8088-exec-9] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-26 00:27:34.717 [http-nio-8088-exec-8] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 0, limit = 5
+2024-02-26 00:30:38.102 [http-nio-8088-exec-3] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9
+2024-02-26 00:30:39.814 [http-nio-8088-exec-10] INFO  c.p.b.controllers.ProductController - keyword = , category_id = 0, page = 4, limit = 9

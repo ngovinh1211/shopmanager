@@ -39,9 +39,14 @@
         <div class="col-md-6">
           <div class="product-details">
             <h2>{{ product?.name }}</h2>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
             <p>{{ product?.description }}</p>
-            <p>Price: {{ product?.price | currency:'$':'symbol':'1.0-0'}}</p>
-            <p>Total: {{ getTotalPrice() | currency:'$':'symbol':'1.0-0' }}</p>
+            <h4>Price: {{ product?.price | currency:'$':'symbol':'1.0-0'}}</h4>
+            <h4>Total: {{ getTotalPrice() | currency:'$':'symbol':'1.0-0' }}</h4>
             <div class="product-actions">
               <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
               <button class="btn btn-success" (click)="buyNow()">Buy Now</button>

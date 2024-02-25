@@ -7,24 +7,25 @@
     text-align: center;
 }
 .product-header {
-    color: rgb(66, 97, 233);
+    color: cyan!important;
+    text-align: center;
+    padding-top: 20px;
 }
 .form-control {
-    background-color:#aba8cd;
+    background-color:white!important;
     border: 1px solid rgb(29, 33, 54);
-    color: white;
+    color: black;
 }
 
 .form-control:focus {
-    border-color: white;
-    background-color: rgb(19, 23, 42);
+    border-color: cyan!important;
+    background-color: white!important;
 }
 .form-label {
     color: white;
 }
-.product-header {
-    color:rgb(37, 65, 192);
+.row{
+    padding-bottom: 30px;
 }
-.product-order {
-    color: rgb(105, 244, 181);
-}
+
+
