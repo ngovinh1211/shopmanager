@@ -5,12 +5,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailProductComponent } from './components/detail-product/detail-product.component';
 import { OrderComponent } from './components/order/order.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { OrderDetailComponent } from './components/detail-order/order.detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {TokenInterceptor} from './interceptors/token.interceptor';
+import { TokenInterceptor} from './interceptors/token.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { UserProfileComponent } from './components/user-profile/user.profile.component';
@@ -29,6 +30,7 @@ import { CategoryAdminComponent } from './components/admin/category/category.adm
 import { AdminModule } from './components/admin/admin.module';
 
 
+
 @NgModule({
   declarations: [    
     HomeComponent, 
@@ -42,6 +44,7 @@ import { AdminModule } from './components/admin/admin.module';
     UserProfileComponent,
     AppComponent,
     ContactComponent,
+    HomepageComponent,
     //ADMIN 
     // AdminComponent,
     // OrderAdminComponent,

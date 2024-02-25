@@ -14,9 +14,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AuthGuardFn } from './guards/auth.guard';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminGuardFn } from './guards/admin.guard';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'products', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'products/:id', component: DetailProductComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuardFn] },
   { path: 'orders/:id', component: OrderDetailComponent },
   { path: 'contact', component: ContactComponent },
+  { path: '', component: HomepageComponent },
   //ADMIN
   { path: 'admin/', component: AdminComponent, canActivate:[AdminGuardFn] }
 ];
