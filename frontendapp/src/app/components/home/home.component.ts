@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   categories: Category[] = []; // from categoryService
   selectedCategoryId: number  = 0; // category selected
   currentPage: number = 0;
-  itemsPerPage: number = 9;
+  itemsPerPage: number = 12;
   pages: number[] = [];
   totalPages:number = 0;
   visiblePages: number[] = [];
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
   }
   searchProducts() {
     this.currentPage = 0;
-    this.itemsPerPage = 9;
+    this.itemsPerPage = 12;
     debugger
     this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
   }

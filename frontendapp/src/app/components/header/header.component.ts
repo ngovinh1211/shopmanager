@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   userResponse?: UserResponse | null;
   isPopoverOpen = false;
-  activeNavItem: number = 0;
+  activeNavItem?: number;
 
   togglePopover(event: Event): void {
     event.preventDefault();

@@ -1,65 +1,72 @@
 <app-header></app-header>
 <div class="container">
-    <div class="intro-section">
-        <h2>Product's Information</h2>
-    </div>    
-    <div class="row">
-        <div class="col-md-6">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div *ngFor="let image of product?.product_images; let i = index" 
-                   class="carousel-item" [ngClass]="{'active': i === currentImageIndex}">
-                <div class="square-image">
-                  <img [src]="image.image_url" class="product-image" alt="Product Image">
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" 
-                    data-bs-slide="prev" (click)="previousImage()">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" 
-                    data-bs-slide="next" (click)="nextImage()">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div class="row">
-            <div class="thumbnail-container">
-              <div *ngFor="let image of product?.product_images; let i = index" 
-                   class="thumbnail-item" 
-                   [ngClass]="{'active': i === currentImageIndex}"
-                   (click)="thumbnailClick(i)">
-                <img [src]="image.image_url" class="thumbnail-image" alt="Thumbnail Image">
-              </div>
+  <div class="back-to-product">
+    <a class="back-link" routerLink="/">Home Page </a>>
+    <a class="back-link" routerLink="/products"> All Products </a>>
+    <a class="back-link" routerLink="/products" *ngIf="product?.category_id===1"> Camera </a>
+    <a class="back-link" routerLink="/products" *ngIf="product?.category_id===2"> Fly Camera </a>
+    <a class="back-link" routerLink="/products" *ngIf="product?.category_id===3"> Gimbal </a>
+    <a class="back-link" routerLink="/products" *ngIf="product?.category_id===4"> Microphone </a>
+    ><a class="back-link" href="javascript:"> {{ product?.name }}</a>
+  </div>
+  <div class="intro-section">
+    <h2>Product's Information</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let image of product?.product_images; let i = index" class="carousel-item"
+            [ngClass]="{'active': i === currentImageIndex}">
+            <div class="square-image">
+              <img [src]="image.image_url" class="product-image" alt="Product Image">
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="product-details">
-            <h2>{{ product?.name }}</h2>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-            <p>{{ product?.description }}</p>
-            <h4>Price: {{ product?.price | currency:'$':'symbol':'1.0-0'}}</h4>
-            <h4>Total: {{ getTotalPrice() | currency:'$':'symbol':'1.0-0' }}</h4>
-            <div class="product-actions">
-              <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
-              <button class="btn btn-success" (click)="buyNow()">Buy Now</button>
-            </div>
-            <div class="product-quantity">
-              <div class="border-wrapper">
-                <button (click)="decreaseQuantity()">-</button>
-                <input type="text" [value]="quantity">
-                <button (click)="increaseQuantity()">+</button>
-              </div>
-            </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
+          (click)="previousImage()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"
+          (click)="nextImage()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="row">
+        <div class="thumbnail-container">
+          <div *ngFor="let image of product?.product_images; let i = index" class="thumbnail-item"
+            [ngClass]="{'active': i === currentImageIndex}" (click)="thumbnailClick(i)">
+            <img [src]="image.image_url" class="thumbnail-image" alt="Thumbnail Image">
           </div>
-        </div>      
-      </div> 
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="product-details">
+        <h2>{{ product?.name }}</h2>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        <p>{{ product?.description }}</p>
+        <h4>Price: {{ product?.price | currency:'$':'symbol':'1.0-0'}}</h4>
+        <h4>Total: {{ getTotalPrice() | currency:'$':'symbol':'1.0-0' }}</h4>
+        <div class="product-actions">
+          <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+          <button class="btn btn-success" (click)="buyNow()">Buy Now</button>
+        </div>
+        <div class="product-quantity">
+          <div class="border-wrapper">
+            <button (click)="decreaseQuantity()">-</button>
+            <input type="text" [value]="quantity">
+            <button (click)="increaseQuantity()">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

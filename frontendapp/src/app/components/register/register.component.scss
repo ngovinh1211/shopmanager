@@ -33,12 +33,10 @@
 }
 
 .form-control:focus {
-   color: white;
+    color: black;
     background-color: transparent;
     outline: none;
-    box-shadow: none;
-    border-color: transparent;
-    padding-left: 0;
+    border-color: transparent !important;    
 }
 
 .password-field {
@@ -65,7 +63,7 @@
 /* Màu checkbox khi được chọn */
 .checkbox-text input[type="checkbox"]:checked {
     border-color: white;
-    background-color: rgb(66, 97, 233);
+    background-color: black;
 }
 
 .form-check-input {
@@ -114,4 +112,5 @@
 }
 .title{
     color: black;
+    font-weight: bold;
 }

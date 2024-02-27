@@ -122,4 +122,8 @@ export class LoginComponent implements OnInit{
   togglePassword() {
     this.showPassword = !this.showPassword;
   }
+  forgotPass(){
+    alert("PLEASE CONTACT THE ADMIN TO RESET YOUR PASSWORD ~!")
+    
+  }
 }

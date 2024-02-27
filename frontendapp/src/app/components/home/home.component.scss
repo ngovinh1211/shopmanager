@@ -51,12 +51,13 @@
 
 .product-image {
     width: 100%;
-    height: auto;
+    height: auto !important;
     margin-bottom: 10px;
 }
 
 .product-name {
     color: white;
+    text-align: center;
 }
 
 .product-description {
@@ -70,6 +71,7 @@
 .product-price {
     font-size: 20px;
     color: white;
+    text-align: center;
 }
 
 .product-rating {
@@ -88,4 +90,9 @@
 }
 .fa-solid{
     color: #FFD700;
+    text-align: center;
+}
+.rating{
+    text-align: center;
+    font-size: x-small !important;
 }
