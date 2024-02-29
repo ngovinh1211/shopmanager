@@ -1,17 +1,15 @@
-import { Component, AfterViewInit } from '@angular/core';
-declare var $: any; // declare jQuery
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
-export class HomepageComponent implements AfterViewInit {
+export class HomepageComponent implements OnInit {
 
   constructor() { }
 
-  ngAfterViewInit(): void {
-    // Initialize the carousel
-    $('#carouselExampleControls').carousel();
+  ngOnInit(): void {
+
   }
 }

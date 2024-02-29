@@ -100,19 +100,15 @@
     position: relative;
 }
 .home-img{
-    width: 1256;
-    height: 696;
+    width: 100%;
+    height: 100%;
 }
 .text-on-thumb{
     position: absolute !important;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: black;
     text-align: center;
-    font-weight: bold !important;
-    font-size: 30px;
 }
 .text-on-thumb a{
     font-weight: 300    !important;
@@ -122,6 +118,18 @@
 .text-on-thumb a:hover{
     text-decoration: underline;
 }
-.link-3-img{
+.link-buy{
     color: black!important;
+}
+.banner-head{
+    color:  grey;
+}
+.banner-des{
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.banner-title{
+    font-weight: 500;
+    font-size: 32px;
 }
